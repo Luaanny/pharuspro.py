@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Login {% endblock %}
+
+{% block conteudo %}
+
+<form action="{{url_for('autenticar')}}" method="post">
+    <div class="mb-3">
+        <label for="login" class="form-label">Login: </label>
+        <input type="text" class="form-control" id="login" name="usuario" placeholder="Digite seu usuário">
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha: </label>
+        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
+      </div>
+      <button class="btn btn-primary" type="submit">Entrar</button>
+
+</form>
+
+{% endblock %}

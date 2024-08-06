@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} {% endblock %}</title>
+</head>
+<body>
+    <a href="{{url_for('index')}}" class="btn btn-outline-primary">Home</a>
+    <a href="#" class="btn-outline-primary">Metas</a>
+    <a href="url_for('dicas')" class="btn-outline-primary">Dicas</a>
+    <a href="{{url_for('login')}}" class="btn-outline-primary">Login</a>
+    
+
+    <div>
+        {% block conteudo%}
+        {% endblock %}
+    </div>
+</body>
+</html>
