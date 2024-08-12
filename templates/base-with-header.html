@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% block main_conteudo %}
-    <header>
-    <div class="org-header">
+<header>
+    <div class="org-header w-100">
         <a class="logo" href="{{ url_for('index') }}">
-        <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
+            <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
         </a>
         <nav>
-        <a href="">Sobre nós</a>
-        <a href="{{url_for('componentes')}}">Componentes</a>
-        <a href="">Gráficos</a>
-        <a href="">Metas</a>
-        <a href="{{url_for('dicas')}}">Dicas</a>
-        <a href="{{url_for('login')}}">
-            <button>Login</button>
-        </a>
+            <a href="">Sobre nós</a>
+            <a href="{{url_for('componentes')}}">Componentes</a>
+            <a href="">Gráficos</a>
+            <a href="">Metas</a>
+            <a href="{{url_for('dicas')}}">Dicas</a>
+            <a href="{{url_for('login')}}">
+                <button>Login</button>
+            </a>
         </nav>
     </div>
-    </header>
-    {% block conteudo %}{% endblock %}
+</header>
+{% block conteudo %}{% endblock %}
 {% endblock %}

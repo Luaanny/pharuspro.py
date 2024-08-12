@@ -1,5 +1,4 @@
 header {
-    width: 100vw;
     height: 90px;
     display: flex;
     justify-content: center;
@@ -7,7 +6,6 @@ header {
 }
 
 .org-header {
-    width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
