@@ -4,7 +4,19 @@
 Pharus - Dicas
 {% endblock %}
 
-    <h5>oi</h5>
+{% block conteudo %}
+<div class="container">
+    <h1>Dicas para Economizar Energia</h1>
+    <div class="tips">
+        {% for tip in tips %}
+            <div class="tip-block">
+                <p>{{ tip }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
 
 
 

@@ -1,19 +1,26 @@
-{% extends 'base.html' %}
-
-{% block titulo %} Componentes {% endblock %}
-
-{% block conteudo %}
+{% extends 'base.html' %} {% block titulo %} Componentes {% endblock %} {% block
+css %}componentes{% endblock %} {% block conteudo %}
 
 <h2>Componentes:</h2>
-<ul class="cards-container">
-  {% for a in adms %}
-    <li class="card">
-      <img src="{{ url_for('static', filename='imgs/' + a.imagem) }}" class="card-img-top" alt="{{ a.nome }}">
-      <div class="card-body">
-        <h5 class="card-title">{{ a.nome }}</h5>
+<div class="container">
+  <div class="row">
+    <ul>
+      {% for a in adms %}
+      <div class="col-3">
+        <li class="card">
+          <img
+            src="{{ url_for('static', filename='imgs/' + a.imagem) }}"
+            class="card-img-top"
+            alt="{{ a.nome }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ a.nome }}</h5>
+          </div>
+        </li>
       </div>
-    </li>
-  {% endfor %}
-</ul>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 
 {% endblock %}

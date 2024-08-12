@@ -12,7 +12,15 @@ if __name__ == "__main__":
 
 @app.route('/dicas')
 def dicas():
-    return render_template('dicas.html')
+    tips = [
+        "Desligue luzes ao sair de um cômodo.",
+        "Use lâmpadas de LED.",
+        "Desligue aparelhos eletrônicos da tomada quando não estiverem em uso.",
+        "Aproveite a luz natural.",
+        "Mantenha portas e janelas fechadas quando o ar-condicionado estiver ligado.",
+    ]
+    
+    return render_template('dicas.html', tips=tips)
 
 
 
