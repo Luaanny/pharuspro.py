@@ -1,67 +1,66 @@
-{% extends 'base.html' %}
-
-
-{% block titulo%}
-    Pharus - Página inicial
-{%endblock%}
-
-{% block css %}style{% endblock %}
-
-
-{% block conteudo %}
+{% extends 'base.html' %} {% block titulo%} Pharus - Página inicial {%endblock%}
+{% block css %}style{% endblock %} {% block conteudo %}
 <header>
-    <div class="org-header">
-        <div class="logo">
-            <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="">
-    
-        </div>
-        <nav>
-            <a href="">Sobre nós</a>
-            <a href="{{url_for('componentes')}}">Componentes</a>
-            <a href="">Gráficos</a>
-            <a href="">Metas</a>
-            <a href="{{url_for('dicas')}}">Dicas</a>
-            <a href="{{url_for('login')}}">
-                <button>Login</button>
-            </a>
-        </nav>
+  <div class="org-header">
+    <div class="logo">
+      <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
     </div>
+    <nav>
+      <a href="">Sobre nós</a>
+      <a href="{{url_for('componentes')}}">Componentes</a>
+      <a href="">Gráficos</a>
+      <a href="">Metas</a>
+      <a href="{{url_for('dicas')}}">Dicas</a>
+      <a href="{{url_for('login')}}">
+        <button>Login</button>
+      </a>
+    </nav>
+  </div>
 </header>
 <main>
-    <section class="principal">
-        <div class="org-quadrados">
-            <div class="quadrado">
-                <img src="static/imgs/adicionar-usuario 1.png" alt="">
-                <h2>Cadastrar novos usuários</h2>
-            </div>
-            <div class="quadrado">
-                <img src="static/imgs/conversa-em-grupo 1.png" alt="">
-                <h2>Listar todos os administradores</h2>
-            </div>
-            <div class="quadrado">
-                <img src="static/imgs/bandeira-em-formato-preto (1) 1.png" alt="">
-                <h2>Editar bandeira</h2>
-            </div>
+  <section class="principal container-fluid mt-2 px-5">
+    <div class="row g-3">
+      <!-- Usando row padrão, sem row-cols-3 -->
+      <div class="col-md-4">
+        <a class="quadrado" href="{{url_for('cadastrar')}}">
+          <img src="static/imgs/adicionar-usuario 1.png" alt="" />
+          <h2>Cadastrar novos usuários</h2>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <div class="quadrado">
+          <img src="../static/imgs/conversa-em-grupo 1.png" alt="" />
+          <h2>Listar todos os administradores</h2>
         </div>
-        <div class="org-quadrados">
-            <div class="quadrado-big"></div>
-            <div class="org-quadradinhos">
-                <div class="quadrado">
-                    <img src="static/imgs/mensagens (1) 1.png" alt="">
-                    <h2>Mensagens</h2>
-                </div>
-                <div class="quadrado">
-                    <img src="static/imgs/lampada 1.png" alt="">
-                    <h2>Listagem de dicas</h2>
-                </div>
-                
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="quadrado">
+          <img src="static/imgs/bandeira-em-formato-preto (1) 1.png" alt="" />
+          <h2>Editar bandeira</h2>
         </div>
-    </section>
+      </div>
+      <div class="col-md-8">
+        <div class="quadrado-big"></div>
+      </div>
+      <div class="col-md-4">
+        <div class="quadrado">
+          <img src="static/imgs/mensagens (1) 1.png" alt="" />
+          <h2>Mensagens</h2>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="quadrado-big h-100"></div>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flex flex-column">
+          <div class="bigger">
+            <img src="static/imgs/lampada 1.png" alt="" />
+            <h2>Listagem de dicas</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-
-
-    
-    
 {% endblock %}

@@ -41,8 +41,10 @@ button {
 }
 
 .principal .quadrado {
-    width: 358px;
-    height: 218px;
+    height: 250px;
+}
+
+.principal .quadrado, .principal .bigger {
     background-color: #343A40;
     display: flex;
     justify-content: center;
@@ -51,7 +53,6 @@ button {
 }
 
 .principal {
-    background-color: #464B51;
     width: 1400px;
     display: flex;
     flex-direction: column;
@@ -66,10 +67,16 @@ main {
 }
 
 .principal .quadrado-big {
-    width: 735px;
-    height: 446px;
+    height: 250px;
     background-color: #343A40;
+}
 
+.bigger {
+    height: 350px;
+}
+
+.principal .quadrado-big2 {
+    background-color: red;
 }
 
 .principal h2 {
@@ -83,12 +90,6 @@ main {
     display: flex;
     margin-bottom: 20px;
     gap: 20px;
-
-}
-
-.org-quadradinhos {
-    display: flex;
-    flex-direction: column;
 }
 
 /* style.css */
@@ -97,33 +98,6 @@ body {
     margin: 20px;
     font-family: 'Roboto Condensed', sans-serif;
     background-color: #343a40;
-}
-
-.login-container {
-    background-color: #464B51;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 15px rgb(248, 203, 1);
-    width: 300px;
-    text-align: center;
-}
-
-.login-centro {
-    margin-bottom: 15px;
-}
-
-.login-centro label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-.login-centro input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ffc107;
-    box-sizing: border-box;
 }
 
 .btn {

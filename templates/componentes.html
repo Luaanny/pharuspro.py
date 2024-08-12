@@ -3,24 +3,22 @@ css %}componentes{% endblock %} {% block conteudo %}
 
 <h2>Componentes:</h2>
 <div class="container">
-  <div class="row">
-    <ul>
-      {% for a in adms %}
-      <div class="col-3">
-        <li class="card">
-          <img
-            src="{{ url_for('static', filename='imgs/' + a.imagem) }}"
-            class="card-img-top"
-            alt="{{ a.nome }}"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ a.nome }}</h5>
-          </div>
-        </li>
-      </div>
-      {% endfor %}
-    </ul>
-  </div>
+  <ul class="row row-cols-2 g-5">
+    {% for a in adms %}
+    <div class="col">
+      <li class="card">
+        <img
+          src="{{ url_for('static', filename='imgs/' + a.imagem) }}"
+          class="card-img-top"
+          alt="{{ a.nome }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ a.nome }}</h5>
+        </div>
+      </li>
+    </div>
+    {% endfor %}
+  </ul>
 </div>
 
 {% endblock %}

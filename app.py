@@ -28,6 +28,10 @@ def dicas():
 def login():
     return render_template('login.html')
 
+@app.route('/cadastrar')
+def cadastrar():
+    return render_template('cadastro.html')
+
 @app.route('/Pagina_inicial', methods=['POST'])
 def Pagina_inicial():
     usuario = request.form['usuario']

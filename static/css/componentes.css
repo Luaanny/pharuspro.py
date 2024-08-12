@@ -1,26 +1,9 @@
 /* Estilo para o container de cards */
-.col {
-    flex-direction: row;
-}
-
 /* Estilo para cada card */
 .card {
     background-color: #f8f9fa;
-    /* Cor de fundo do card */
-    border: 1px solid #ddd;
-    /* Borda leve ao redor do card */
-    border-radius: 8px;
-    /* Bordas arredondadas */
-    margin: 10px;
-    /* Espaçamento entre os cards */
-    width: 120px;
-    /* Largura fixa para os cards */
     text-align: center;
-    /* Centraliza o texto dentro do card */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-    overflow: hidden;
-    /* Esconde qualquer conteúdo que saia do card */
 }
 
 /* style.css */
@@ -28,13 +11,9 @@
 /* Estilo para as imagens dos cards */
 .card-img-top {
     width: 100%;
-    /* Faz com que a imagem ocupe toda a largura do card */
-    height: 120px;
-    /* Define uma altura fixa para todas as imagens */
+    height: 423px;
     object-fit: cover;
-    /* Mantém a proporção da imagem e recorta se necessário */
     border-bottom: 1px solid #ddd;
-    /* Linha separando imagem e corpo do card */
 }
 
 /* Estilo para o título do card */
