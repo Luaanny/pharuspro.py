@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titulo %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>{% block titulo %} Página{% endblock %}</title>
+    
 </head>
 <body>
-    <a href="{{url_for('index')}}" class="btn btn-outline-primary">Home</a>
-    <a href="#" class="btn-outline-primary">Metas</a>
-    <a href="url_for('dicas')" class="btn-outline-primary">Dicas</a>
-    <a href="{{url_for('login')}}" class="btn-outline-primary">Login</a>
-    
-
+    {% set mensagens = get_flashed_messages(with_categories = true) %}
+    {% if mensagens %}
+        {% for cat, m in mensagens %}
+            <div class="alert alert-{{cat}}">{{m}}</div>
+        {% endfor %}
+    {%  endif %}
     <div>
         {% block conteudo%}
         {% endblock %}

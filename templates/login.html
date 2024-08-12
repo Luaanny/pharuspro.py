@@ -4,17 +4,24 @@
 
 {% block conteudo %}
 
-<form action="{{url_for('autenticar')}}" method="post">
-    <div class="mb-3">
-        <label for="login" class="form-label">Login: </label>
-        <input type="text" class="form-control" id="login" name="usuario" placeholder="Digite seu usuário">
-      </div>
-      <div class="mb-3">
-        <label for="senha" class="form-label">Senha: </label>
-        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
-      </div>
-      <button class="btn btn-primary" type="submit">Entrar</button>
 
-</form>
+<div class="login-container">
+  <h2>Login</h2>
+  <form action="{{url_for('Pagina_inicial')}}" method="post">
+    <div class="login-centro">
+      <label for="login" class="from-label">Login: </label>
+      <input type="text" class="from-control" id="login" name="usuario" placeholder="Digite seu úsuario">
+    </div>
+    <div class="login-centro">
+      <label for="senha" class="from-label">Senha: </label>
+      <input type="password" class="from-control" id="senha" name="senha" placeholder="Digite sua senha">
+    </div>
+    <button class="btn btn-primary" type="submit">Entrar</button>
+
+  </form>
+</div>
+      
+
+
 
 {% endblock %}

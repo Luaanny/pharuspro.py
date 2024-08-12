@@ -6,8 +6,58 @@
 {%endblock%}
 
 {% block conteudo %}
+<header>
+    <div class="org-header">
+        <div class="logo">
+            <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="">
+    
+        </div>
+        <nav>
+            <a href="">Sobre nós</a>
+            <a href="{{url_for('componentes')}}">Componentes</a>
+            <a href="">Gráficos</a>
+            <a href="">Metas</a>
+            <a href="{{url_for('dicas')}}">Dicas</a>
+            <a href="{{url_for('login')}}">
+                <button>Login</button>
+            </a>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="principal">
+        <div class="org-quadrados">
+            <div class="quadrado">
+                <img src="static/imgs/adicionar-usuario 1.png" alt="">
+                <h2>Cadastrar novos usuários</h2>
+            </div>
+            <div class="quadrado">
+                <img src="static/imgs/conversa-em-grupo 1.png" alt="">
+                <h2>Listar todos os administradores</h2>
+            </div>
+            <div class="quadrado">
+                <img src="static/imgs/bandeira-em-formato-preto (1) 1.png" alt="">
+                <h2>Editar bandeira</h2>
+            </div>
+        </div>
+        <div class="org-quadrados">
+            <div class="quadrado-big"></div>
+            <div class="org-quadradinhos">
+                <div class="quadrado">
+                    <img src="static/imgs/mensagens (1) 1.png" alt="">
+                    <h2>Mensagens</h2>
+                </div>
+                <div class="quadrado">
+                    <img src="static/imgs/lampada 1.png" alt="">
+                    <h2>Listagem de dicas</h2>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+</main>
 
-    <h1>Bem vindo(a) ao Pharus</h1>
+
 
     
     

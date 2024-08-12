@@ -1,0 +1,221 @@
+
+header{
+    width: 100vw;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    background-color: #343A40;
+}
+.org-header{
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header a{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+nav{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+button{
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #ffc107;
+    font-family: "Roboto Condensed", sans-serif;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+.principal .quadrado{
+    width: 358px;
+    height: 218px;
+    background-color: #343A40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.principal{
+    background-color: #464B51;
+    width: 1400px;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    background-color: #464B51;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.principal .quadrado-big{
+    width: 735px;
+    height: 446px;
+    background-color: #343A40;
+    
+}
+.principal h2{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 18px;
+    color: rgba(254, 255, 248, 0.808);
+    font-weight: 500;  
+}
+.org-quadrados{
+    display: flex;
+    margin-bottom: 20px;
+    gap: 20px;
+
+}
+.org-quadradinhos{
+    display: flex;
+    flex-direction: column;
+}
+
+/* style.css */
+
+body, html {
+    height: 110%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #343A40;
+}
+
+.login-container {
+    background-color: #464B51;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgb(248, 203, 1);
+    width: 300px;
+    text-align: center;
+}
+
+.login-centro {
+    margin-bottom: 15px;
+}
+
+.login-centro label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.login-centro input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffc107;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #000000;
+}
+
+/* style.css */
+
+/* Estilo base para todas as mensagens */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 100%;
+    max-width: 400px;
+}
+
+
+/* Estilo para mensagens de erro ou perigo */
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Estilo para mensagens de alerta ou aviso */
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* style.css */
+
+/* Estilo para o container de cards */
+.cards-container {
+    display: flex; /* Utiliza Flexbox para organizar os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os cards */
+    list-style-type: none; /* Remove os marcadores de lista padrão */
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para cada card */
+.card {
+    background-color: #f8f9fa; /* Cor de fundo do card */
+    border: 1px solid #ddd; /* Borda leve ao redor do card */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin: 10px; /* Espaçamento entre os cards */
+    width: 120px; /* Largura fixa para os cards */
+    text-align: center; /* Centraliza o texto dentro do card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Esconde qualquer conteúdo que saia do card */
+}
+
+/* style.css */
+
+/* Estilo para as imagens dos cards */
+.card-img-top {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura do card */
+    height: 120px; /* Define uma altura fixa para todas as imagens */
+    object-fit: cover; /* Mantém a proporção da imagem e recorta se necessário */
+    border-bottom: 1px solid #ddd; /* Linha separando imagem e corpo do card */
+}
+
+/* Estilo para o título do card */
+.card-title {
+    font-size: 14px; /* Tamanho da fonte para o título */
+    margin: 10px 0; /* Espaçamento em cima e embaixo do título */
+    color: #333; /* Cor do texto */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .card {
+        width: 100%; /* Faz com que os cards ocupem 100% da largura em telas pequenas */
+    }
+}
+
+
+
+
+
