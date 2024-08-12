@@ -1,0 +1,23 @@
+/* style.css */
+
+.error-page {
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.error-page h1 {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.error-page p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.error-page a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}

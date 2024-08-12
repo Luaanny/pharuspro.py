@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} error {% endblock %}
+{% block css %}error{% endblock %}
+
+{% block conteudo %}
+<div class="error-page">
+    <h1>404</h1>
+    <p>Desculpe, a página que você está procurando não existe.</p>
+    <a href="{{ url_for('index') }}">Voltar para a Página Inicial</a>
+</div>
+{% endblock %}
