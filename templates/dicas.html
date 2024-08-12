@@ -1,22 +1,18 @@
-{% extends 'base.html' %}
-
-{% block titulo %}
-Pharus - Dicas
-{% endblock %}
-
+{% extends 'base-with-header.html' %} {% block titulo %} Pharus - Dicas{% endblock %}
+{%block css %}dicas{% endblock %} 
 {% block conteudo %}
-<div class="container">
-    <h1>Dicas para Economizar Energia</h1>
-    <div class="tips">
-        {% for tip in tips %}
-            <div class="tip-block">
-                <p>{{ tip }}</p>
-            </div>
-        {% endfor %}
+
+<section class="container mt-5 pt-5">
+  <h1>Dicas para Economizar Energia</h1>
+  <ul class="tips row g-5">
+    {% for tip in tips %}
+    <div class="col-md-4">
+      <li class="tip-block">
+        <p>{{ tip }}</p>
+      </li>
     </div>
-</div>
+    {% endfor %}
+  </ul>
+</section>
 
 {% endblock %}
-
-
-

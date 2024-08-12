@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- css -->
+    <link rel="stylesheet" href="../static/css/base.css" />
     <link
       rel="stylesheet"
       href="../static/css/{% block css %}{% endblock %}.css"
@@ -34,14 +35,12 @@
     />
     <title>{% block titulo %}Página{% endblock %}</title>
   </head>
-
   <body>
     {% set mensagens = get_flashed_messages(with_categories = true) %} {% if
     mensagens %} {% for cat, m in mensagens %}
     <div class="alert alert-{{cat}}">{{m}}</div>
-    {% endfor %} {% endif %}
-
-    {% block conteudo%} {% endblock %}
+    {% endfor %} {% endif %} 
+    {% block main_conteudo %} {% endblock %}
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -1,47 +1,57 @@
-{% extends 'base.html' %} {% block titulo %} Cadastrar novos usuários {% endblock %} 
-{% block css %}cadastro{% endblock %} 
+{% extends 'base-with-header.html' %} {% block titulo %} Cadastrar novos usuários {%
+endblock %} {% block css %}cadastro{% endblock %} 
 {% block conteudo %}
 
-<section class="container">
-  <div class="row align-items-center">
-    <div class="col-6">
-      <div class="text-center user-photo">
-        <img src="../static/imgs/user-profile-image.png" alt="" class="user-profile-image">
-        <h3>User</h3>
+<main>
+  <section class="container">
+    <div class="row align-items-center">
+      <div class="col-6">
+        <div class="text-center user-photo">
+          <img
+            src="../static/imgs/user-profile-image.png"
+            alt=""
+            class="user-profile-image"
+          />
+          <h3>User</h3>
+        </div>
+      </div>
+      <div class="col-6 form-cool">
+        <h2 class="text-center">Dados do usuário</h2>
+        <form class="user-form ps-5">
+          <div class="mb-2">
+            <label for="exampleInputEmail1" class="form-label"
+              >Nome completo:</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-2">
+            <label for="exampleInputPassword1" class="form-label"
+              >Usuário:</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="mb-2">
+            <label for="exampleInputPassword1" class="form-label">Email:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        </form>
       </div>
     </div>
-    <div class="col-6 form-cool">
-      <h2 class="text-center">Dados do usuário</h2>
-      <form class="user-form ps-5">
-        <div class="mb-2">
-          <label for="exampleInputEmail1" class="form-label">Nome completo:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-2">
-          <label for="exampleInputPassword1" class="form-label">Usuário:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
-        <div class="mb-2">
-          <label for="exampleInputPassword1" class="form-label">Email:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Entrar</button>
-      </form>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 {% endblock %}

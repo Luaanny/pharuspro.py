@@ -1,26 +1,8 @@
-{% extends 'base.html' %} {% block titulo%} Pharus - Página inicial {%endblock%}
+{% extends 'base-with-header.html' %} {% block titulo%} Pharus - Página inicial {%endblock%}
 {% block css %}style{% endblock %} {% block conteudo %}
-<header>
-  <div class="org-header">
-    <div class="logo">
-      <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
-    </div>
-    <nav>
-      <a href="">Sobre nós</a>
-      <a href="{{url_for('componentes')}}">Componentes</a>
-      <a href="">Gráficos</a>
-      <a href="">Metas</a>
-      <a href="{{url_for('dicas')}}">Dicas</a>
-      <a href="{{url_for('login')}}">
-        <button>Login</button>
-      </a>
-    </nav>
-  </div>
-</header>
 <main>
   <section class="principal container-fluid mt-2 px-5">
     <div class="row g-3">
-      <!-- Usando row padrão, sem row-cols-3 -->
       <div class="col-md-4">
         <a class="quadrado" href="{{url_for('cadastrar')}}">
           <img src="static/imgs/adicionar-usuario 1.png" alt="" />
