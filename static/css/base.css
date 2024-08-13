@@ -1,3 +1,4 @@
+/* header */
 header {
     height: 90px;
     display: flex;
@@ -5,10 +6,41 @@ header {
     background-color: #343A40;
 }
 
-.org-header {
+.animated-link {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    padding-bottom: 2px;
+}
+
+.animated-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.animated-link:hover::after {
+    width: 100%;
+}
+
+.navbar-nav {
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
     align-items: center;
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+.navbar-toggler, .navbar-toggler-icon {
+    color: #fff !important;
+    background-color: #fff !important;
 }
 
 header a {
@@ -18,12 +50,6 @@ header a {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
 }
 
 button {

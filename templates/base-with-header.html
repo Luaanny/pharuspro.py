@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 {% block main_conteudo %}
 <header>
-    <div class="org-header w-100">
-        <a class="logo" href="{{ url_for('index') }}">
-            <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
-        </a>
-        <nav>
+    <!-- <div class="org-header w-100">
+        <nav class="">
             <a href="">Sobre nós</a>
             <a href="{{url_for('componentes')}}">Componentes</a>
             <a href="">Gráficos</a>
@@ -15,7 +12,45 @@
                 <button>Login</button>
             </a>
         </nav>
-    </div>
+    </div> -->
+    <nav class="navbar navbar-expand-lg w-100">
+        <div class="container-fluid justify-content-around">
+            <a class="logo" href="{{ url_for('index') }}">
+                <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item animated-link">
+                        <a href="">Sobre nós</a>
+                    </li>
+                    <li class="nav-item animated-link">
+                        <a href="{{url_for('componentes')}}">Componentes</a>
+                    </li>
+                    <li class="nav-item animated-link">
+                        <a href="">Gráficos</a>
+                    </li>
+                    <li class="nav-item animated-link">
+                        <a href="">Metas</a>
+                    </li>
+                    <li class="nav-item animated-link">
+                        <a href="{{url_for('dicas')}}">Dicas</a>
+                    </li>
+                    <li class="nav-item animated-link">
+                        <a href="{{url_for('login')}}"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('login')}}">
+                            <button>Login</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 {% block conteudo %}{% endblock %}
 {% endblock %}
