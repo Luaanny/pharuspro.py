@@ -55,10 +55,13 @@ header a {
 .btn {
     background-color: #ffc107 !important;
     color: rgb(0, 0, 0) !important;
+    border-radius: 30px;
     border: none !important;
     transition: ease-in-out 5s;
 }
 
 .btn:hover {
     color: white !important;
+    border: 3px solid #ffc107 !important;
+    background: transparent !important;
 }

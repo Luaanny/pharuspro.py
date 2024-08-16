@@ -12,9 +12,16 @@
     margin-top: -60px;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #FFC107 !important;
     color: #343A40 !important;
     border-radius: 25px !important;
     border: none !important;
+    transition: .8s !important;
+}
+
+.btn-primary:hover {
+    background: transparent !important;
+    border: 3px solid #FFC107 !important;
+    color: #FFC107 !important;
 }
