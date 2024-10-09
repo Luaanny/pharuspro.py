@@ -17,34 +17,39 @@ endblock %} {% block css %}cadastro{% endblock %}
       </div>
       <div class="col-6 form-cool">
         <h2 class="text-center">Dados do usuário</h2>
-        <form class="user-form ps-5">
+        <form class="user-form ps-5" action="{{url_for('cadastrar')}}" method="post">
           <div class="mb-2">
-            <label for="exampleInputEmail1" class="form-label"
-              >Nome completo:</label
+            <label for="nomeCompleto" class="form-label"
+              >Nome:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="nomeCompleto"
+              name="nome"
+              required
+            />
+          </div>
+          <div class="mb-2">
+            <label for="email" class="form-label"
+              >Email:</label
             >
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
+              id="email"
+              name="email"
+              required
             />
           </div>
           <div class="mb-2">
-            <label for="exampleInputPassword1" class="form-label"
-              >Usuário:</label
-            >
+            <label for="senha" class="form-label">Senha:</label>
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <div class="mb-2">
-            <label for="exampleInputPassword1" class="form-label">Email:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
+              id="senha"
+              name="senha"
+              required
             />
           </div>
           <button type="submit" class="btn btn-primary w-100">Entrar</button>

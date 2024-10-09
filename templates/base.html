@@ -33,7 +33,7 @@
       type="image/x-icon"
       href="{{ url_for('static', filename='favicon.ico') }}"
     />
-    <title>{% block titulo %}Página{% endblock %}</title>
+    <title>{% block titulo %}Home{% endblock %}</title>
   </head>
   <body>
     {% set mensagens = get_flashed_messages(with_categories = true) %} {% if

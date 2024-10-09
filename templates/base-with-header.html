@@ -6,7 +6,7 @@
             <a href="">Sobre nós</a>
             <a href="{{url_for('componentes')}}">Componentes</a>
             <a href="">Gráficos</a>
-            <a href="">Metas</a>
+            <a href="{{url_for('metas')}}">Metas</a>
             <a href="{{url_for('dicas')}}">Dicas</a>
             <a href="{{url_for('login')}}">
                 <button>Login</button>
@@ -34,13 +34,16 @@
                         <a href="">Gráficos</a>
                     </li>
                     <li class="nav-item animated-link">
-                        <a href="">Metas</a>
+                        <a href="{{url_for('metas')}}">Metas</a>
                     </li>
                     <li class="nav-item animated-link">
                         <a href="{{url_for('dicas')}}">Dicas</a>
                     </li>
                     <li class="nav-item animated-link">
                         <a href="{{url_for('login')}}"></a>
+                    </li>
+                    <li class="nav-item animated-link">
+                        <a href="{{url_for('ideal_de_consumo')}}">Ideal de consumo</a>
                     </li>
                     <li class="nav-item h-100">
                         <a href="{{url_for('login')}}">
@@ -52,5 +55,24 @@
         </div>
     </nav>
 </header>
+
+<div class="sidebar">
+    <div class="user d-flex gap-2 align-items-center">
+        <div class="user>
+            <img src="static/imgs/user-profile-image.png" alt="">
+        </div>
+        
+    </div>
+    <a href="{{url_for('index')}}"><i class="bi bi-bookmark"></i> Home </a>
+    <a href="{{url_for('metas')}}"><i class="bi bi-bookmark"></i> Metas</a>
+    <a href="#"><i class="bi bi-coin"></i> Consumo</a>
+    <a href="{{url_for('ideal_de_consumo')}}"><i class="bi bi-database-fill"></i> Ideal de Consumo </a>
+    <a href="#"><i class="bi bi-laptop"></i> Simulador </a>
+    <a href="{{url_for('dicas')}}"><i class="bi bi-lightbulb"></i> Dicas </a>
+    <a href="#"><i class="bi bi-star"></i> Conquistas</a>
+    <a href="#"><i class="bi bi-heart"></i> Apoie</a>
+    <a href="#" class="exit"><i class="bi bi-box-arrow-right"></i> Sair</a>
+</div>
+
 {% block conteudo %}{% endblock %}
 {% endblock %}

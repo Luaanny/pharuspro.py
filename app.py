@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'lualinde'
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 @app.route('/dicas')
 def dicas():
@@ -24,24 +26,36 @@ def dicas():
 
 
 
-@app.route('/login')
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        senha = request.form['senha']
+
+        if email == "usuario@example.com" and senha == "senha123":
+            flash('Login realizado com sucesso!', 'sucess')
+            return redirect(url_for('index'))
+        
+        flash('Nome de úsuario ou senha incorretos', 'danger')
+            
     return render_template('login.html')
 
-@app.route('/cadastrar')
+
+
+@app.route('/cadastrar', methods=['GET', 'POST'])
 def cadastrar():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+        senha = request.form['senha']
+
+        flash('Cadastro realizado com sucesso!', 'sucess')
+        return redirect(url_for('login'))
     return render_template('cadastro.html')
 
-@app.route('/Pagina_inicial', methods=['POST'])
-def Pagina_inicial():
-    usuario = request.form['usuario']
-    senha = request.form['senha']
-    if usuario == 'admin' and senha == 'senha123':
-        return render_template ('index.html')
-    else: 
-        flash('Dados incorretos. Login ou senha inválidos', 'danger')
-        flash('tente novamente', 'warning')
-        return redirect(url_for('login'))
+
+    
 
 @app.route('/componentes')
 def componentes():
@@ -60,4 +74,13 @@ def page_not_found(e):
 @app.errorhandler(500)
 def internal_server_error(e):
     return render_template('500.html'), 500
-   
+
+@app.route('/metas')
+def metas():
+    return render_template('metas.html') 
+
+@app.route('/ideal_de_consumo')
+def ideal_de_consumo():
+    return render_template('ideal_de_consumo.html')
+
+

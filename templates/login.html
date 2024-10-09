@@ -6,34 +6,32 @@
   <div class="row align-items-center justify-content-center">
     <div class="col-5 form-cool">
       <h2 class="text-center">Log in</h2>
-      <form class="user-form ps-5">
+      <form class="user-form ps-5" action="{{ url_for('login') }}" method="post">
         <div class="mb-2">
-          <label for="exampleInputEmail1" class="form-label">Nome completo:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-2">
-          <label for="exampleInputPassword1" class="form-label">Usuário:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
-        <div class="mb-4">
-          <label for="exampleInputPassword1" class="form-label">Email:</label>
+          <label for="email" class="form-label">Email:</label>
           <input
             type="email"
             class="form-control"
-            id="exampleInputPassword1"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="senha" class="form-label">Senha:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="senha"
+            name="senha"
+            required
           />
         </div>
         <span><a href="{{url_for('cadastrar')}}">Não tem conta? Cadastre aqui</a></span>
         <button type="submit" class="btn btn-primary w-100 mt-4">Entrar</button>
+        </div>
+       
+       
       </form>
     </div>
   </div>
