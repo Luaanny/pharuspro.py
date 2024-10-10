@@ -87,5 +87,7 @@ def ideal_de_consumo():
 @app.route('/logout')
 def logout():
     session.clear()
-    flash('voce foi logado', 'sucess')
+    flash('voce foi deslogado', 'sucess')
     return redirect(url_for('login'))
+
+
