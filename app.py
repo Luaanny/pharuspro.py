@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request, url_for, flash, redirect, session
 
 
 app = Flask(__name__)
@@ -34,6 +34,7 @@ def login():
         senha = request.form['senha']
 
         if email == "usuario@example.com" and senha == "senha123":
+            session['logged_in'] = True
             flash('Login realizado com sucesso!', 'sucess')
             return redirect(url_for('index'))
         
@@ -83,4 +84,8 @@ def metas():
 def ideal_de_consumo():
     return render_template('ideal_de_consumo.html')
 
-
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('voce foi logado', 'sucess')
+    return redirect(url_for('login'))
