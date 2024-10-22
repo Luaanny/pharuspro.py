@@ -6,6 +6,21 @@ header {
     background-color: #343A40;
 }
 
+.logo {
+    font-size: 24px; 
+    font-weight: bold;
+}
+
+.colorida {
+    color: #ffc107 
+
+}
+
+.title {
+    color: #f8f9fa;
+    justify-content: center;
+}
+
 .animated-link {
     position: relative;
     color: #000;
@@ -127,9 +142,21 @@ header a {
 }
 
 .sidebar a:hover{
-    background: #f9b17a;
+    background:  #ffc107;
     color: #fff;  
     border-left: 3px solid white;
+}
+
+.btn-sidebar {
+    position: absolute;
+    top: 30px;
+    right: 1px;
+    background-color: #ffc107;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
 }
 
 .sidebar .exit:hover {

@@ -1,6 +1,8 @@
 .principal .quadrado {
     height: 250px;
     text-decoration: none;
+    justify-content: center !important; 
+
 }
 
 .principal .quadrado, .principal .bigger {

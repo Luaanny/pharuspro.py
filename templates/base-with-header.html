@@ -17,6 +17,7 @@
         <div class="container-fluid justify-content-around">
             <a class="logo" href="{{ url_for('index') }}">
                 <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
+                
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +25,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    <li class="title"><h3><span class="colorida">P</span>HARUS</h3></li>
+                    </li>
                     <li class="nav-item h-100">
                         <a href="{{url_for('login')}}">
                             <button class="btn">Login</button>
@@ -41,17 +44,20 @@
             <img src="/static/imgs/user-profile-image.png" alt="">
         </div>           
     </div>
+    <div class="sidebar-items">
     <a href="{{url_for('index')}}"><i class="bi bi-house"></i> Home </a>
     <a href="{{url_for('metas')}}"><i class="bi bi-bookmark"></i> Metas</a>
     <a href="#"><i class="bi bi-coin"></i> Consumo</a>
     <a href="{{url_for('ideal_de_consumo')}}"><i class="bi bi-database-fill"></i> Ideal de Consumo </a>
+    <a href="#"><i class="bi bi-flag"></i> Bandeira </a>
     <a href="{{url_for('dicas')}}"><i class="bi bi-lightbulb"></i> Dicas </a>
     <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel"><i class="bi bi-box-arrow-right"></i> Sair</a>
-
-    
-    <button id="open_btn">
-        <i id="open_btn_icon" class="bi bi-arrow-right-square-fill"></i>
+  </div>
+   
+    <button class="btn-sidebar">
+        <i class="bi bi-arrow-right-square-fill"></i>
     </button>
+
 
     
 </div>
@@ -85,5 +91,11 @@
   document.getElementById('confirmLogout').addEventListener('click', function(){
     window.location.href = "{{url_for('login')}}";
   });
+</script>
+
+<script>
+    document.getElementById('open_btn').addEventListener('click', function(){
+        document.getElementById('sidebar').classList('open-sidebar')
+    });
 </script>
 {% endblock %}
