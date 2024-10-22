@@ -24,33 +24,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item animated-link">
-                        <a href="">Sobre nós</a>
-                    </li>
-                    <li class="nav-item animated-link">
-                        <a href="{{url_for('componentes')}}">Componentes</a>
-                    </li>
-                    <li class="nav-item animated-link">
-                        <a href="">Gráficos</a>
-                    </li>
-                    <li class="nav-item animated-link">
-                        <a href="{{url_for('metas')}}">Metas</a>
-                    </li>
-                    <li class="nav-item animated-link">
-                        <a href="{{url_for('dicas')}}">Dicas</a>
-                    </li>
-                    <li class="nav-item animated-link">
-                        <a href="{{url_for('login')}}"></a>
-                    </li>
-                    <li class="nav-item animated-link">
-                        <a href="{{url_for('ideal_de_consumo')}}">Ideal de consumo</a>
-                    </li>
                     <li class="nav-item h-100">
                         <a href="{{url_for('login')}}">
                             <button class="btn">Login</button>
                         </a>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -61,16 +39,19 @@
     <div class="user d-flex gap-2 align-items-center">
         <div class="user-img">
             <img src="/static/imgs/user-profile-image.png" alt="">
-        </div>
-             
+        </div>           
     </div>
     <a href="{{url_for('index')}}"><i class="bi bi-house"></i> Home </a>
     <a href="{{url_for('metas')}}"><i class="bi bi-bookmark"></i> Metas</a>
     <a href="#"><i class="bi bi-coin"></i> Consumo</a>
     <a href="{{url_for('ideal_de_consumo')}}"><i class="bi bi-database-fill"></i> Ideal de Consumo </a>
-    <a href="#"><i class="bi bi-laptop"></i> Simulador </a>
     <a href="{{url_for('dicas')}}"><i class="bi bi-lightbulb"></i> Dicas </a>
     <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel"><i class="bi bi-box-arrow-right"></i> Sair</a>
+
+    
+    <button id="open_btn">
+        <i id="open_btn_icon" class="bi bi-arrow-right-square-fill"></i>
+    </button>
 
     
 </div>

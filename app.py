@@ -54,9 +54,7 @@ def cadastrar():
         flash('Cadastro realizado com sucesso!', 'sucess')
         return redirect(url_for('login'))
     return render_template('cadastro.html')
-
-
-    
+ 
 
 @app.route('/componentes')
 def componentes():
