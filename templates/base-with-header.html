@@ -14,27 +14,16 @@
         </nav>
     </div> -->
     <nav class="navbar navbar-expand-lg w-100">
-        <div class="container-fluid justify-content-around">
-            <a class="logo" href="{{ url_for('index') }}">
+        <div class="container-fluid justify-content-center">
+            <a class="d-flex align-items-center logo" href="{{ url_for('index') }}">
                 <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
+                <span class="title"><h3><span class="colorida">P</span>HARUS</h3></span>
                 
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="title"><h3><span class="colorida">P</span>HARUS</h3></li>
-                    </li>
-                    <li class="nav-item h-100">
-                        <a href="{{url_for('login')}}">
-                            <button class="btn">Login</button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
+        <a href="{{url_for('login')}}">
+            <button class="btn">Login</button>
+        </a>
     </nav>
 </header>
 
@@ -42,21 +31,66 @@
     <div class="user d-flex gap-2 align-items-center">
         <div class="user-img">
             <img src="/static/imgs/user-profile-image.png" alt="">
+           
+               
         </div>           
     </div>
-    <div class="sidebar-items">
-    <a href="{{url_for('index')}}"><i class="bi bi-house"></i> Home </a>
-    <a href="{{url_for('metas')}}"><i class="bi bi-bookmark"></i> Metas</a>
-    <a href="#"><i class="bi bi-coin"></i> Consumo</a>
-    <a href="{{url_for('ideal_de_consumo')}}"><i class="bi bi-database-fill"></i> Ideal de Consumo </a>
-    <a href="#"><i class="bi bi-flag"></i> Bandeira </a>
-    <a href="{{url_for('dicas')}}"><i class="bi bi-lightbulb"></i> Dicas </a>
-    <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel"><i class="bi bi-box-arrow-right"></i> Sair</a>
-  </div>
-   
-    <button class="btn-sidebar">
-        <i class="bi bi-arrow-right-square-fill"></i>
-    </button>
+    <ul id="side_items">
+        <li class="side_item">
+            <a href="{{url_for('index')}}">
+                <i class="bi bi-house"></i>
+                <span class="item-description">
+                    Home
+                </span>
+            </a>
+    </li>
+        <li class="side_item">
+            <a href="{{url_for('metas')}}">
+                <i class="bi bi-bookmark"></i>
+                <span class="item-description">
+                    Metas
+                </span>
+            </a>
+    </li>
+       
+        <li class="side_item">
+            <a href="#">
+                <i class="bi bi-coin"></i>
+                <span class="item-description">
+                    Consumo
+                </span>
+            </a>
+    </li>
+    <li class="side_item">
+            <a href="{{url_for('ideal_de_consumo')}}">
+                <i class="bi bi-database-fill"></i>
+                <span class="item-description">
+                    ideal de Consumo
+                </span>
+            </a>
+    </li>
+    <li class="side_item">
+        <a href="{{url_for('dicas')}}">
+            <i class="bi bi-lightbulb"></i>
+            <span class="item-description">
+                Dicas
+            </span>
+        </a>
+    </li>
+    <li class="side_item">
+        <a href="#" class="exit"  data-bs-toggle="modal" data-bs-target="#logoutModel">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="item-description">
+                Sair
+            </span>
+        </a>
+</li>
+
+   </ul>
+   <button id="open_btn">
+    <i id="open_btn_icon" class="bi bi-chevron-right"></i>
+</button>
+
 
 
     

@@ -72,6 +72,7 @@ header a {
     color: rgb(0, 0, 0) !important;
     border: none !important;
     transition: ease-in-out 5s;
+    margin-right: 25px;
 }
 
 .btn:hover {

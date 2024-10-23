@@ -1,0 +1,4 @@
+.question {
+    display: none; /* Esconde todas as perguntas inicialmente */
+    margin-top: 10px;
+}
