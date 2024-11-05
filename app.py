@@ -10,7 +10,7 @@ def index():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 @app.route('/dicas')
 def dicas():
@@ -23,9 +23,6 @@ def dicas():
     ]
     
     return render_template('dicas.html', tips=tips)
-
-
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -41,8 +38,6 @@ def login():
         flash('Nome de úsuario ou senha incorretos', 'danger')
             
     return render_template('login.html')
-
-
 
 @app.route('/cadastrar', methods=['GET', 'POST'])
 def cadastrar():
