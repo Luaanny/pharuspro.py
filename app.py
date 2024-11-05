@@ -49,18 +49,6 @@ def cadastrar():
         return redirect(url_for('login'))
     return render_template('cadastro.html')
 
-
-@app.route('/componentes')
-def componentes():
-    adms = [
-        {'nome': 'Ingrid Leticia', 'imagem': 'ingrid.jpg'},
-        {'nome': 'Jonas Nogueira', 'imagem': 'jonas.jpg'},
-        {'nome': 'Luanny Martins', 'imagem': 'lua.jpg'},
-        {'nome': 'Ryan Kauê', 'imagem': 'ryan.jpg'},
-    ]
-    return render_template('componentes.html', adms=adms)
-
-
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
