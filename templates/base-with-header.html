@@ -55,33 +55,24 @@
         </ul>
         </div>
 
-        <button class="btn bg-transparent border-0" type="button">
+        <button class="btn mb-2 bg-transparent border-0" type="button">
             <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel">
                 <i class="bi bi-box-arrow-right"></i>
                 <span class="item-description">Sair</span>
             </a>
         </button>
-{#        <button id="open_btn">#}
-{#            <i id="open_btn_icon" class="bi bi-chevron-right"></i>#}
-{#        </button>#}
     </div>
 
     <!-- Modal -->
     <div class="modal fade" id="logoutModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header justify-content-center">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja Sair?</h1>
                 </div>
-                <div class="modal-body">
-                    Deseja sair?
-                </div>
-                <div class="modal-footer d-flex">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="{{ url_for('logout') }}" class="btn btn-danger">Sair</a>
-
-                    </button>
+                <div class="modal-footer d-flex justify-content-between">
+                    <button type="button" class="btn" data-bs-dismiss="modal">Fechar</button>
+                    <button class="btn exit-btn"><a href="{{ url_for('logout') }}">Sair</a></button>
                 </div>
             </div>
         </div>

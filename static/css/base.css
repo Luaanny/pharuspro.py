@@ -25,8 +25,7 @@ header h3 {
 }
 
 .colorida {
-    color: #ffc107 
-
+    color: #ffc107
 }
 
 .title {
@@ -175,7 +174,20 @@ header .exit-login {
     cursor: pointer;
 }
 
-.sidebar .exit:hover {
-    background: red;
+.modal-footer button {
+    width: 120px;
+    border-radius: 15px;
+    transition: .3s ease-in-out;
 }
 
+.modal-footer .exit-btn:hover {
+    background-color: red !important;
+}
+
+.modal-footer .exit-btn:hover > a {
+    color: #fff;
+}
+.exit-btn a {
+    text-decoration: none;
+    color: black;
+}
