@@ -1,9 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
 /* header */
 header {
     height: 90px;
     display: flex;
     justify-content: center;
     background-color: #343A40;
+}
+
+header h3 {
+    margin: 0;
 }
 
 .logo {
@@ -67,12 +80,15 @@ header a {
     font-weight: bold;
 }
 
+header .exit-login {
+    margin-right: 20px;
+}
+
 .btn {
     background-color: #ffc107 !important;
     color: rgb(0, 0, 0) !important;
     border: none !important;
     transition: ease-in-out 5s;
-    margin-right: 25px;
 }
 
 .btn:hover {
@@ -81,10 +97,9 @@ header a {
 
 .sidebar {
     background-color:   #343A40;
-    box-shadow: 4px 0 10px #f8f9fa;
     overflow: hidden;
     position: absolute;
-    height: 100vh;
+    height: calc(100% - 90px);
     width: 230px;
     top: 0;
     left: 0;
@@ -101,7 +116,7 @@ header a {
     text-decoration: none;
     font-size: 17px;
     line-height: 1.5;
-    transition: .5s; 
+    transition: .3s;
 }
 
 .sidebar a i{

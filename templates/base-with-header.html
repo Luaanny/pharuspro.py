@@ -1,135 +1,105 @@
 {% extends 'base.html' %}
 {% block main_conteudo %}
-<header>
-    <!-- <div class="org-header w-100">
-        <nav class="">
-            <a href="">Sobre nós</a>
-            <a href="{{url_for('componentes')}}">Componentes</a>
-            <a href="">Gráficos</a>
-            <a href="{{url_for('metas')}}">Metas</a>
-            <a href="{{url_for('dicas')}}">Dicas</a>
-            <a href="{{url_for('login')}}">
-                <button>Login</button>
+    <header>
+        <nav class="navbar navbar-expand-lg w-100">
+            <div class="container-fluid justify-content-center">
+                <a class="d-flex align-items-center logo" href="{{ url_for('index') }}">
+                    <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt=""/>
+                    <span class="title"><h3><span class="colorida">P</span>HARUS</h3></span>
+                </a>
+            </div>
+            <a href="{{ url_for('login') }}" class="exit-login">
+                <button class="btn">Login</button>
             </a>
         </nav>
-    </div> -->
-    <nav class="navbar navbar-expand-lg w-100">
-        <div class="container-fluid justify-content-center">
-            <a class="d-flex align-items-center logo" href="{{ url_for('index') }}">
-                <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt="" />
-                <span class="title"><h3><span class="colorida">P</span>HARUS</h3></span>
-                
-            </a>
-        </div>
-        <a href="{{url_for('login')}}">
-            <button class="btn">Login</button>
-        </a>
-    </nav>
-</header>
+    </header>
 
-<div class="sidebar">
-    <div class="user d-flex gap-2 align-items-center">
-        <div class="user-img">
-            <img src="/static/imgs/user-profile-image.png" alt="">
-           
-               
-        </div>           
+    <div class="sidebar d-flex flex-column justify-content-between">
+        <div class="top">
+             <div class="user d-flex gap-2 align-items-center">
+            <div class="user-img">
+                <img src="/static/imgs/user-profile-image.png" alt="">
+            </div>
+        </div>
+        <ul id="side_items" class="list-unstyled">
+            <li class="side_item">
+                <a href="{{ url_for('index') }}">
+                    <i class="bi bi-house"></i>
+                    <span class="item-description">Home</span>
+                </a>
+            </li>
+            <li class="side_item">
+                <a href="{{ url_for('metas') }}">
+                    <i class="bi bi-bookmark"></i>
+                    <span class="item-description">Metas</span>
+                </a>
+            </li>
+            <li class="side_item">
+                <a href="#">
+                    <i class="bi bi-coin"></i>
+                    <span class="item-description">Consumo</span>
+                </a>
+            </li>
+            <li class="side_item">
+                <a href="{{ url_for('ideal_de_consumo') }}">
+                    <i class="bi bi-database-fill"></i>
+                    <span class="item-description">ideal de Consumo</span>
+                </a>
+            </li>
+            <li class="side_item">
+                <a href="{{ url_for('dicas') }}">
+                    <i class="bi bi-lightbulb"></i>
+                    <span class="item-description">Dicas</span>
+                </a>
+            </li>
+        </ul>
+        </div>
+
+        <button class="btn bg-transparent border-0" type="button">
+            <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel">
+                <i class="bi bi-box-arrow-right"></i>
+                <span class="item-description">Sair</span>
+            </a>
+        </button>
+{#        <button id="open_btn">#}
+{#            <i id="open_btn_icon" class="bi bi-chevron-right"></i>#}
+{#        </button>#}
     </div>
-    <ul id="side_items">
-        <li class="side_item">
-            <a href="{{url_for('index')}}">
-                <i class="bi bi-house"></i>
-                <span class="item-description">
-                    Home
-                </span>
-            </a>
-    </li>
-        <li class="side_item">
-            <a href="{{url_for('metas')}}">
-                <i class="bi bi-bookmark"></i>
-                <span class="item-description">
-                    Metas
-                </span>
-            </a>
-    </li>
-       
-        <li class="side_item">
-            <a href="#">
-                <i class="bi bi-coin"></i>
-                <span class="item-description">
-                    Consumo
-                </span>
-            </a>
-    </li>
-    <li class="side_item">
-            <a href="{{url_for('ideal_de_consumo')}}">
-                <i class="bi bi-database-fill"></i>
-                <span class="item-description">
-                    ideal de Consumo
-                </span>
-            </a>
-    </li>
-    <li class="side_item">
-        <a href="{{url_for('dicas')}}">
-            <i class="bi bi-lightbulb"></i>
-            <span class="item-description">
-                Dicas
-            </span>
-        </a>
-    </li>
-    <li class="side_item">
-        <a href="#" class="exit"  data-bs-toggle="modal" data-bs-target="#logoutModel">
-            <i class="bi bi-box-arrow-right"></i>
-            <span class="item-description">
-                Sair
-            </span>
-        </a>
-</li>
 
-   </ul>
-   <button id="open_btn">
-    <i id="open_btn_icon" class="bi bi-chevron-right"></i>
-</button>
+    <!-- Modal -->
+    <div class="modal fade" id="logoutModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Deseja sair?
+                </div>
+                <div class="modal-footer d-flex">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="{{ url_for('logout') }}" class="btn btn-danger">Sair</a>
 
-
-
-    
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="logoutModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-           Deseja sair?
-        </div>
-        <div class="modal-footer d-flex">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="{{url_for('logout')}}" class="btn btn-danger">Sair</a>
-
-          </button>
-        </div>
-      </div>
     </div>
-  </div>
 
-{% block conteudo %}{% endblock %}
-  
-  
+    {% block conteudo %}{% endblock %}
 
-<script>
-  document.getElementById('confirmLogout').addEventListener('click', function(){
-    window.location.href = "{{url_for('login')}}";
-  });
-</script>
 
-<script>
-    document.getElementById('open_btn').addEventListener('click', function(){
-        document.getElementById('sidebar').classList('open-sidebar')
-    });
-</script>
+
+    <script>
+        document.getElementById('confirmLogout').addEventListener('click', function () {
+            window.location.href = "{{url_for('login')}}";
+        });
+    </script>
+
+    <script>
+        document.getElementById('open_btn').addEventListener('click', function () {
+            document.getElementById('sidebar').classList('open-sidebar')
+        });
+    </script>
 {% endblock %}
