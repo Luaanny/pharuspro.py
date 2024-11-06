@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSS Base e específico para páginas -->
-    <link rel="stylesheet" href="../static/css/base.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    {% if include_sidebar %}
+        <link rel="stylesheet" href="../static/css/sidebar.css" />
+    {% endif %}
+
+    {% if include_header %}
+        <link rel="stylesheet" href="../static/css/header.css" />
+    {% endif %}
+
     <link
       rel="stylesheet"
       href="../static/css/{% block css %}{% endblock %}.css"
@@ -37,6 +46,7 @@
     <title>{% block titulo %}Home{% endblock %}</title>
   </head>
   <body>
+
     <!-- Toast Container -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
       {% set mensagens = get_flashed_messages(with_categories=true) %}
@@ -54,8 +64,32 @@
       {% endif %}
     </div>
 
+    <div class="modal fade" id="logoutModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja Sair?</h1>
+                </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <button type="button" class="btn" data-bs-dismiss="modal">Fechar</button>
+                    <button class="btn exit-btn"><a href="{{ url_for('logout') }}">Sair</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    {% if include_header %}
+        {% include "components/header.html"%}
+    {% endif %}
+
+    <!-- SideBar -->
+    {% if include_sidebar %}
+        {% include "components/sidebar.html" %}
+    {% endif %}
+
     <!-- Conteúdo Principal da Página -->
-    {% block main_conteudo %}{% endblock %}
+    {% block content %}{% endblock %}
 
     <!-- Bootstrap e Script para exibir Toasts -->
     <script

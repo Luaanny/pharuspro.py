@@ -1,0 +1,46 @@
+main {
+    height: calc(100% - 90px);
+    margin-left: 200px;
+     background-color: #464B51;
+    display: flex;
+    justify-content: center;
+}
+
+.principal .quadrado {
+    height: 250px;
+    text-decoration: none;
+    justify-content: center !important;
+}
+
+.principal .quadrado, .principal .bigger {
+    background-color: #343A40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+}
+
+.principal .quadrado-big {
+    height: 250px;
+    background-color: #343A40;
+}
+
+.bigger {
+    height: 350px;
+}
+
+.principal .quadrado-big2 {
+    background-color: red;
+}
+
+.principal h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 18px;
+    color: rgba(254, 255, 248, 0.808);
+    font-weight: 500;
+}

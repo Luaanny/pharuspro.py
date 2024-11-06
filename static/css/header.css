@@ -1,0 +1,53 @@
+header {
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    background-color: #343A40;
+}
+
+header h3 {
+    margin: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.colorida {
+    color: #ffc107
+}
+
+header .title {
+    color: #f8f9fa;
+    justify-content: center;
+}
+
+header .navbar-nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+header a {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header .exit-login {
+    margin-right: 20px;
+}
+
+header .btn {
+    background-color: #ffc107 !important;
+    color: rgb(0, 0, 0) !important;
+    border: none !important;
+}
+
+header .btn:hover {
+    color: white !important;
+}

@@ -1,0 +1,79 @@
+.sidebar {
+    background-color:   #343A40;
+    overflow: hidden;
+    position: absolute;
+    height: calc(100% - 90px);
+    width: 230px;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    z-index: 1000 !important;
+    margin-top: 90px;
+}
+
+.sidebar a {
+    display: block;
+    color: #ffff;
+    text-align: left;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 1.5;
+    transition: .3s;
+}
+
+.sidebar a i{
+    margin-right: 8px;
+    width: 15px;
+}
+.sidebar .user{
+    padding: 16px;
+}
+
+.sidebar .user-img {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #676f9d;
+    box-shadow:
+    0px 4px 6px rgba(103, 111, 157, 0.5),
+    0px 6px 10px rgba(70, 71, 105, 0.3),
+    0px 8px 12px rgba(45, 50, 80, 0.2);
+}
+
+.sidebar .user span{
+    font-size: 24px;
+    color: #fff;
+}
+
+.sidebar .user img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.sidebar .footer{
+    padding: 16px;
+    background: #333;
+    color: #fff;
+    font-size: 11px;
+    margin-top: 40px;
+}
+
+.sidebar a:hover{
+    background:  #ffc107;
+    color: #fff;
+    border-left: 3px solid white;
+}
+
+.btn-sidebar {
+    position: absolute;
+    top: 30px;
+    right: 1px;
+    background-color: #ffc107;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,48 @@
+<div class="sidebar d-flex flex-column justify-content-between">
+    <div class="top">
+        <div class="user d-flex gap-2 align-items-center">
+            <div class="user-img">
+                <img src="static/imgs/user-profile-image.png" alt="">
+            </div>
+        </div>
+        <ul id="side_items" class="list-unstyled">
+            <li class="side_item">
+                <a href="{{ url_for('index') }}">
+                    <i class="bi bi-house"></i>
+                    <span class="item-description">Home</span>
+                </a>
+            </li>
+            <li class="side_item">
+                <a href="{{ url_for('metas') }}">
+                    <i class="bi bi-bookmark"></i>
+                    <span class="item-description">Metas</span>
+                </a>
+            </li>
+            <li class="side_item">
+                <a href="#">
+                    <i class="bi bi-coin"></i>
+                    <span class="item-description">Consumo</span>
+                </a>
+            </li>
+            <li class="side_item">
+                <a href="{{ url_for('ideal_de_consumo') }}">
+                    <i class="bi bi-database-fill"></i>
+                    <span class="item-description">ideal de Consumo</span>
+                </a>
+            </li>
+            <li class="side_item">
+                <a href="{{ url_for('dicas') }}">
+                    <i class="bi bi-lightbulb"></i>
+                    <span class="item-description">Dicas</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <button class="btn mb-2 bg-transparent border-0" type="button">
+        <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="item-description">Sair</span>
+        </a>
+    </button>
+</div>

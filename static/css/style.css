@@ -1,110 +1,33 @@
-main {
-    height: calc(100% - 90px);
-    margin-left: 200px;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.principal .quadrado {
-    height: 250px;
+body, html {
+    height: 100%;
+}
+
+.modal .btn {
+    background-color: #ffc107 !important;
+    color: rgb(0, 0, 0) !important;
+    border: none !important;
+}
+
+.modal-footer button {
+    width: 120px;
+    border-radius: 15px;
+    transition: .3s ease-in-out;
+}
+
+.modal-footer .exit-btn:hover {
+    background-color: red !important;
+}
+
+.modal-footer .btn:hover > a {
+    color: #fff !important;
+}
+
+.exit-btn a {
     text-decoration: none;
-    justify-content: center !important;
-}
-
-.principal .quadrado, .principal .bigger {
-    background-color: #343A40;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.principal {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    background-color: #464B51;
-    display: flex;
-    justify-content: center;
-}
-
-.principal .quadrado-big {
-    height: 250px;
-    background-color: #343A40;
-}
-
-.bigger {
-    height: 350px;
-}
-
-.principal .quadrado-big2 {
-    background-color: red;
-}
-
-.principal h2 {
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: 18px;
-    color: rgba(254, 255, 248, 0.808);
-    font-weight: 500;
-}
-
-.org-quadrados {
-    display: flex;
-    margin-bottom: 20px;
-    gap: 20px;
-}
-
-/* style.css */
-
-body {
-    margin: 20px;
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: #343a40;
-}
-
-.btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #ffc107;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #000000;
-}
-
-/* style.css */
-
-/* Estilo base para todas as mensagens */
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    width: 100%;
-    max-width: 400px;
-}
-
-
-/* Estilo para mensagens de erro ou perigo */
-.alert-danger {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-/* Estilo para mensagens de alerta ou aviso */
-.alert-warning {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeeba;
+    color: black;
 }
