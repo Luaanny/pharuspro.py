@@ -43,7 +43,7 @@
       type="image/x-icon"
       href="{{ url_for('static', filename='favicon.ico') }}"
     />
-    <title>{% block titulo %}Home{% endblock %}</title>
+    <title>{% block title %}Home{% endblock %}</title>
   </head>
   <body>
 
@@ -72,7 +72,7 @@
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn" data-bs-dismiss="modal">Fechar</button>
-                    <button class="btn exit-btn"><a href="{{ url_for('logout') }}">Sair</a></button>
+                    <button class="btn exit-btn"><a href="{{ url_for('auth_bp.logout') }}">Sair</a></button>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
 
     <!-- Header -->
     {% if include_header %}
-        {% include "components/header.html"%}
+        {% include "components/header.html" %}
     {% endif %}
 
     <!-- SideBar -->

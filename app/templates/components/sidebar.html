@@ -2,18 +2,18 @@
     <div class="top">
         <div class="user d-flex gap-2 align-items-center">
             <div class="user-img">
-                <img src="static/imgs/user-profile-image.png" alt="">
+                <img src="../../static/imgs/user-profile-image.png" alt="">
             </div>
         </div>
         <ul id="side_items" class="list-unstyled">
             <li class="side_item">
-                <a href="{{ url_for('index') }}">
+                <a href="{{ url_for('post.index') }}">
                     <i class="bi bi-house"></i>
                     <span class="item-description">Home</span>
                 </a>
             </li>
             <li class="side_item">
-                <a href="{{ url_for('metas') }}">
+                <a href="{{ url_for('post.metas') }}">
                     <i class="bi bi-bookmark"></i>
                     <span class="item-description">Metas</span>
                 </a>
@@ -25,13 +25,13 @@
                 </a>
             </li>
             <li class="side_item">
-                <a href="{{ url_for('ideal_de_consumo') }}">
+                <a href="{{ url_for('post.ideal_de_consumo') }}">
                     <i class="bi bi-database-fill"></i>
                     <span class="item-description">ideal de Consumo</span>
                 </a>
             </li>
             <li class="side_item">
-                <a href="{{ url_for('dicas') }}">
+                <a href="{{ url_for('post.dicas') }}">
                     <i class="bi bi-lightbulb"></i>
                     <span class="item-description">Dicas</span>
                 </a>

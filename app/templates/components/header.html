@@ -1,8 +1,8 @@
 <header>
     <nav class="navbar navbar-expand-lg w-100">
         <div class="container-fluid justify-content-center">
-            <a class="d-flex align-items-center logo" href="{{ url_for('index') }}">
-                <img src="static/imgs/Projeto_Pharus-removebg-preview 1.png" alt=""/>
+            <a class="d-flex align-items-center logo" href="{{ url_for('post.index') }}">
+                <img src="../../static/imgs/Projeto_Pharus-removebg-preview 1.png" alt=""/>
                 <span class="title">
                     <h3>
                         <span class="colorida">P</span>HARUS
@@ -11,7 +11,7 @@
             </a>
         </div>
 
-        <a href="{{ url_for('login') }}" class="exit-login">
+        <a href="{{ url_for('auth_bp.login') }}" class="exit-login">
             <button class="btn">Login</button>
         </a>
     </nav>
