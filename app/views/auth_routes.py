@@ -1,6 +1,6 @@
 from flask import session, Blueprint, render_template, redirect, url_for, flash, request
 from werkzeug.security import generate_password_hash, check_password_hash
-from app.models import User
+from app.models.User import User
 from app.extensions.database import db
 
 auth_bp = Blueprint('auth_bp', __name__, url_prefix='/auth')
@@ -16,7 +16,7 @@ def login():
             session['logged_in'] = True
             session['user_id'] = user.id
             flash('Login realizado com sucesso!', 'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('post.index'))
 
         flash('Nome de usuário ou senha incorretos', 'error')
 
@@ -33,8 +33,8 @@ def register():
             flash('Email já cadastrado', 'error')
             return redirect(url_for('auth_bp.cadastrar'))
 
-        hashed_password = generate_password_hash(request.form['senha'], method='sha256')
-        new_user = User(nome=nome, email=email, senha=hashed_password)
+        hashed_password = generate_password_hash(request.form['senha'], method='pbkdf2:sha256')
+        new_user = User(username=nome, email=email, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
 
