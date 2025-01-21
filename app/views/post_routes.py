@@ -24,4 +24,4 @@ def dicas():
         "Mantenha portas e janelas fechadas quando o ar-condicionado estiver ligado.",
     ]
 
-    return render_template('pages/dicas.html', tips=tips, include_sidebar=True, include_header=True)
+    return render_template('pages/dicas.html', tips=tips, include_sidebar=False, include_header=True)

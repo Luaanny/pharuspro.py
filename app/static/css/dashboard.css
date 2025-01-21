@@ -18,6 +18,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 250px;
+    text-decoration: none;
 }
 
 .principal {
@@ -28,10 +30,6 @@ main {
 .principal .quadrado-big {
     height: 250px;
     background-color: #343A40;
-}
-
-.bigger {
-    height: 350px;
 }
 
 .principal .quadrado-big2 {
