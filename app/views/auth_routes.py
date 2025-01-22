@@ -2,8 +2,14 @@ from flask import session, Blueprint, render_template, redirect, url_for, flash,
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.models.User import User
 from app.extensions.database import db
+from app.extensions.flask_login import lm
+from flask_login import login_user, logout_user
 
 auth_bp = Blueprint('auth_bp', __name__, url_prefix='/auth')
+
+@lm.user_loader
+def load_user(id):
+    return User.query.get(id)
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -13,8 +19,7 @@ def login():
 
         user = User.query.filter_by(email=email).first()
         if user and check_password_hash(user.password, senha):
-            session['logged_in'] = True
-            session['user_id'] = user.id
+            login_user(user)
             flash('Login realizado com sucesso!', 'success')
             return redirect(url_for('post.index'))
 
@@ -38,6 +43,8 @@ def register():
         db.session.add(new_user)
         db.session.commit()
 
+        login_user(new_user)
+
         flash('Cadastro realizado com sucesso!', 'success')
         return redirect(url_for('auth_bp.login'))
 
@@ -45,6 +52,6 @@ def register():
 
 @auth_bp.route('/logout')
 def logout():
-    session.clear()
+    logout_user()
     flash('Logout realizado com sucesso!', 'success')
     return redirect(url_for('auth_bp.login'))
