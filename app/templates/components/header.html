@@ -11,8 +11,11 @@
             </a>
         </div>
 
-        <a href="{{ url_for('auth_bp.login') }}" class="exit-login">
-            <button class="btn">Login</button>
-        </a>
+        {% if current_user.is_authenticated %}
+        {% else %}
+            <a href="{{ url_for('auth_bp.login') }}" class="exit-login">
+                <button class="btn">Login</button>
+            </a>
+        {% endif %}
     </nav>
 </header>

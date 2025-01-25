@@ -1,9 +1,11 @@
 <div class="sidebar d-flex flex-column justify-content-between">
     <div class="top">
         <div class="user d-flex gap-2 align-items-center">
-            <div class="user-img">
-                <img src="../../static/imgs/user-profile-image.png" alt="">
-            </div>
+            {% if current_user.is_authenticated %}
+                <div class="user-img">
+                    <img src="../../static/imgs/user-profile-image.png" alt="">
+                </div>
+            {% endif %}
         </div>
         <ul id="side_items" class="list-unstyled">
             <li class="side_item">
@@ -39,10 +41,12 @@
         </ul>
     </div>
 
-    <button class="btn mb-2 bg-transparent border-0" type="button">
-        <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel">
-            <i class="bi bi-box-arrow-right"></i>
-            <span class="item-description">Sair</span>
-        </a>
-    </button>
+    {% if current_user.is_authenticated %}
+        <button class="btn mb-2 bg-transparent border-0" type="button">
+            <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel">
+                <i class="bi bi-box-arrow-right"></i>
+                <span class="item-description">Sair</span>
+            </a>
+        </button>
+    {% endif %}
 </div>
