@@ -66,6 +66,10 @@
     border-left: 3px solid white;
 }
 
+.sidebar .exit:hover {
+    background: red !important;
+}
+
 .btn-sidebar {
     position: absolute;
     top: 30px;
