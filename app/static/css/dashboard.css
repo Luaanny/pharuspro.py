@@ -1,7 +1,7 @@
 main {
     height: calc(100% - 90px);
-    margin-left: 200px;
-     background-color: #464B51;
+    margin-left: 80px;
+    background-color: #464B51;
     display: flex;
     justify-content: center;
 }
