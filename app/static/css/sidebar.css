@@ -10,8 +10,12 @@
     z-index: 1000 !important;
     margin-top: 90px;
     transition: width ease-in-out .5s;
+    color: white;
 }
 
+.username:first-letter {
+    text-transform: uppercase;
+}
 .item-description {
     display: none;
 }

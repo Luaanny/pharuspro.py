@@ -21,10 +21,10 @@
             </div>
             <div class="right-content col-5 h-100 user-form">
                 <h1 class="mb-4">Cadastro</h1>
-                <form action="{{ url_for('auth_bp.login') }}" method="post">
+                <form action="{{ url_for('auth_bp.register') }}" method="post">
                      <div class="mb-4">
-                        <label for="name" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="name" name="name" required/>
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required/>
                     </div>
                     <div class="mb-4">
                         <label for="email" class="form-label">Email</label>

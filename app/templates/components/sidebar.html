@@ -1,9 +1,12 @@
 <div class="sidebar d-flex flex-column justify-content-between align-items-center">
     <div class="top">
-        <div class="user d-flex gap-2 align-items-center">
+        <div class="user d-flex gap-2 justify-content-center">
             {% if current_user.is_authenticated %}
-                <div class="user-img">
-                    <img src="../../static/imgs/user-profile-image.png" alt="">
+                <div class="w-100 d-flex gap-3 align-items-center">
+                    <div class="user-img">
+                        <img src="../../static/imgs/user-profile-image.png" alt="">
+                    </div>
+                    <h4 class="item-description mt-1 username fw-bolder">{{ current_user.username }}</h4>
                 </div>
             {% endif %}
         </div>

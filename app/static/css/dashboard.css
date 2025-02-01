@@ -4,6 +4,7 @@ main {
     background-color: #464B51;
     display: flex;
     justify-content: center;
+    transition: margin-left .5s ease-in-out;
 }
 
 .principal .quadrado {
