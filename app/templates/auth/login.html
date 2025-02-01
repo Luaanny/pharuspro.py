@@ -1,28 +1,39 @@
 {% extends 'base.html' %}
 {% block titulo %} Login {% endblock %}
+{% block css %}login{% endblock %}
 {% block content %}
 
-    <!-- Login Form Section -->
-    <section class="container">
-        <div class="row align-items-center justify-content-center min-vh-100">
-            <div class="col-md-6 col-lg-5 form-cool p-4">
-                <h2 class="text-center mb-4">Log in</h2>
-                <form class="user-form" action="{{ url_for('auth_bp.login') }}" method="post">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
+    <div class="background d-flex align-items-center">
+        <div class="center-login-container container d-flex justify-content-between align-items-center">
+            <div class="left-content col-3.5 h-100 d-flex flex-column">
+                <div class="img">
+                    <img src="../../static/Pharus_logo.ico" alt="">
+                </div>
+                <div class="text">
+                    <h1 class="welcome">Bem-Vindo!</h1>
+                    <p>Bem-vindo ao Pharus! Nosso sistema foi criado para ajudar você a economizar energia, promover a
+                        sustentabilidade e ter mais controle sobre seus gastos. Faça login para acessar conteúdos que
+                        facilitam
+                        sua jornada rumo à eficiência energética.</p>
+                </div>
+            </div>
+            <div class="right-content col-5 h-custom user-form">
+                <h1 class="mb-5">Login</h1>
+                <form action="{{ url_for('auth_bp.login') }}" method="post">
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required/>
                     </div>
                     <div class="mb-3">
-                        <label for="senha" class="form-label">Senha:</label>
+                        <label for="senha" class="form-label">Senha</label>
                         <input type="password" class="form-control" id="senha" name="senha" required/>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a href="{{ url_for('auth_bp.register') }}">Não tem conta? Cadastre-se aqui</a>
+                    <div class="d-flex flex-column justify-content-between align-items-start">
+                        <a href="{{ url_for('auth_bp.register') }}" class="account-create mb-3">Não tem conta? Registre</a>
                         <button type="submit" class="btn btn-primary mt-3 w-100">Entrar</button>
                     </div>
                 </form>
             </div>
         </div>
-    </section>
-
+    </div>
 {% endblock %}
