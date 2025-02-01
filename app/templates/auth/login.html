@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block titulo %} Login {% endblock %}
+{% block title %} Login {% endblock %}
 {% block css %}login{% endblock %}
 {% block content %}
 
@@ -7,7 +7,9 @@
         <div class="center-login-container container d-flex justify-content-between align-items-center">
             <div class="left-content col-3.5 h-100 d-flex flex-column">
                 <div class="img">
-                    <img src="../../static/Pharus_logo.ico" alt="">
+                    <a href="{{ url_for('post.index') }}">
+                         <img src="../../static/Pharus_logo.ico" alt="" style="height: 80px; width: 83px;">
+                    </a>
                 </div>
                 <div class="text">
                     <h1 class="welcome">Bem-Vindo!</h1>

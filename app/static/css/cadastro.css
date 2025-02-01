@@ -1,20 +1,107 @@
-.user-profile-image {
-    width: 80%;
-    height: fit-content;
-    border-radius: 50%;
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../imgs/farol_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.form-cool {
-    border-left: 3px solid #464b51;
+.col-3\.5 {
+    max-width: 340px;
 }
 
-.user-photo h3 {
-    margin-top: -60px;
+.h-custom {
+    height: 90%;
 }
 
-.btn-primary{
-    background-color: #FFC107 !important;
-    color: #343A40 !important;
-    border-radius: 25px !important;
+.center-login-container {
+    border-radius: 20px;
+    background: rgba(103, 102, 102, 0.30);
+    box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(255, 255, 255, 0.15) inset;
+    max-width: 1228px !important;
+    width: 100vw;
+    height: 85vh;
+    padding: 34px 58px !important;
+}
+
+.text {
+    margin-top: 85px;
+    color: white;
+}
+
+.text h1 {
+    font-size: 48px;
+}
+
+.text p {
+    margin-top: 43px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.welcome::after {
+    content: "";
+    display: block;
+    margin-top: 22px;
+    width: 130px !important;
+    height: 3px !important;
+    background-color: white;
+}
+
+.user-form {
+    padding: 60px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(10.671875px);
+    color: white;
+}
+
+.user-form h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    background: transparent !important;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.67);
     border: none !important;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.9),
+    0 0 20px rgba(255, 204, 0, 0.67) !important;
+    font-weight: 400;
+}
+
+.form-control:-webkit-autofill {
+    background-color: transparent !important;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5) !important;
+    -webkit-text-fill-color: black !important;
+    transition: background-color .5s ease-in-out 0s;
+}
+
+.form-label {
+    font-size: 18px !important;
+    letter-spacing: 1px;
+}
+
+.account-create {
+    font-weight: 700;
+}
+
+.btn-primary {
+    color: white !important;
+    font-weight: 900 !important;
+    font-size: 20px !important;
+    border: none !important;
+    border-radius: 50px !important;
+    background: rgba(255, 204, 0, 0.67) !important;
+    transition: background-color ease-in-out .5s !important;
+}
+
+.btn-primary:hover {
+    background: transparent !important;
+    border: 2px solid rgba(255, 204, 0, 0.67) !important;
 }

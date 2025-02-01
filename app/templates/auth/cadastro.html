@@ -1,62 +1,45 @@
-{% extends 'base.html' %} {% block title %} Cadastrar novos usuários {%
-endblock %} {% block css %}cadastro{% endblock %} 
+{% extends 'base.html' %}
+{% block title %} cadastro {% endblock %}
+{% block css %}cadastro{% endblock %}
 {% block content %}
 
-<main>
-  <section class="container">
-    <div class="row align-items-center">
-      <div class="col-6">
-        <div class="text-center user-photo">
-          <img
-            src="../../static/imgs/user-profile-image.png"
-            alt=""
-            class="user-profile-image"
-          />
-          <h3>User</h3>
+    <div class="background d-flex align-items-center">
+        <div class="center-login-container container d-flex justify-content-between align-items-center">
+            <div class="left-content col-3.5 h-100 d-flex flex-column">
+                <div class="img">
+                    <a href="{{ url_for('post.index') }}">
+                         <img src="../../static/Pharus_logo.ico" alt="" style="height: 80px; width: 83px;">
+                    </a>
+                </div>
+                <div class="text">
+                    <h1 class="welcome">Bem-Vindo!</h1>
+                    <p>Bem-vindo ao Pharus! Nosso sistema foi criado para ajudar você a economizar energia, promover a
+                        sustentabilidade e ter mais controle sobre seus gastos. Crie já a sua conta para acessar conteúdos que
+                        facilitam
+                        sua jornada rumo à eficiência energética.</p>
+                </div>
+            </div>
+            <div class="right-content col-5 h-100 user-form">
+                <h1 class="mb-4">Cadastro</h1>
+                <form action="{{ url_for('auth_bp.login') }}" method="post">
+                     <div class="mb-4">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" name="name" required/>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" required/>
+                    </div>
+                    <div class="d-flex flex-column justify-content-between align-items-start">
+                        <a href="{{ url_for('auth_bp.login') }}" class="account-create mb-3">Já tem conta? Logue aqui!</a>
+                        <button type="submit" class="btn btn-primary mt-3 w-100">Entrar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      <div class="col-6 form-cool">
-        <h2 class="text-center">Dados do usuário</h2>
-        <form class="user-form ps-5" action="{{url_for('auth_bp.register')}}" method="post">
-          <div class="mb-2">
-            <label for="nomeCompleto" class="form-label"
-              >Nome:</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="nomeCompleto"
-              name="nome"
-              required
-            />
-          </div>
-          <div class="mb-2">
-            <label for="email" class="form-label"
-              >Email:</label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              required
-            />
-          </div>
-          <div class="mb-2">
-            <label for="senha" class="form-label">Senha:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="senha"
-              name="senha"
-              required
-            />
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Entrar</button>
-        </form>
-      </div>
     </div>
-  </section>
-</main>
-
 {% endblock %}
