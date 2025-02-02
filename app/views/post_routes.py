@@ -1,5 +1,10 @@
+from datetime import datetime
+
 from flask import Blueprint, render_template, redirect, redirect, url_for, request
-from app.models import User
+from flask_login import current_user
+
+from app.extensions.database import  db
+from app.models.Consumo import Consumo
 
 post_bp = Blueprint('post', __name__)
 
@@ -9,7 +14,17 @@ def index():
 
 @post_bp.route('/metas', methods=['GET', 'POST'])
 def metas():
-    return render_template('pages/metas.html', include_sidebar=True, include_header=True)
+    consumo_mensal = db.session.query(Consumo).filter_by(user_id=current_user.id).order_by(Consumo.date.desc()).first()
+    print(f"Consumo mensal recuperado do banco: {consumo_mensal.consumo_mensal if consumo_mensal else 'Nenhum consumo encontrado'}")
+    faixa_min = None
+    faixa_max = None
+
+    if consumo_mensal is not None:
+        faixa_min = consumo_mensal.consumo_mensal - 20
+        faixa_max = consumo_mensal.consumo_mensal + 20
+
+    return render_template('pages/metas.html', include_sidebar=True, include_header=True, consumo_mensal=consumo_mensal,
+                           faixa_min=faixa_min, faixa_max=faixa_max)
 
 @post_bp.route('/simulador', methods=['POST', 'GET'])
 def simulador():
@@ -28,7 +43,7 @@ def simulador():
                 potency=potency,
                 time_interval=time_interval,
                 tariff=tariff,
-                user=current_user.id,
+                user=current_user,
                 consumo_mensal=consumo_mensal,
             )
 
