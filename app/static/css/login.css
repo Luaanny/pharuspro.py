@@ -18,8 +18,6 @@
     border-radius: 20px;
     background: rgba(103, 102, 102, 0.30);
     box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(255, 255, 255, 0.15) inset;
-    max-width: 1228px !important;
-    width: 100vw;
     height: 85vh;
     padding: 34px 58px !important;
 }
@@ -104,4 +102,41 @@
 .btn-primary:hover {
     background: transparent !important;
     border: 2px solid rgba(255, 204, 0, 0.67) !important;
+}
+
+@media screen and (min-width: 1920px) {
+    .user-form {
+        height: 55vh;
+    }
+
+    .img img {
+        width: 103px;
+        height: 100px;
+    }
+
+    .text h1 {
+        font-size: 64px;
+        width: max-content;
+    }
+
+    .text p {
+        font-size: 24px;
+        width: 550px;
+    }
+
+    .user-form h1 {
+        font-size: 64px;
+    }
+
+    .form-label {
+        font-size: 24px !important;
+    }
+
+    .btn-primary {
+        font-size: 30px !important;
+    }
+
+    .account-create {
+        font-size: 20px;
+    }
 }

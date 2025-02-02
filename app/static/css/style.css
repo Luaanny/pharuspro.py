@@ -4,6 +4,15 @@
     font-family: "Poppins", Serif, serif;
 }
 
+main {
+    height: calc(100% - 90px);
+    margin-left: 80px;
+    background-color: #464B51;
+    display: flex;
+    justify-content: center;
+    transition: margin-left .5s ease-in-out;
+}
+
 body, html {
     height: 100%;
     background-color: #464B51 !important;

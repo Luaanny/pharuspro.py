@@ -1,12 +1,3 @@
-main {
-    height: calc(100% - 90px);
-    margin-left: 80px;
-    background-color: #464B51;
-    display: flex;
-    justify-content: center;
-    transition: margin-left .5s ease-in-out;
-}
-
 .principal .quadrado {
     height: 250px;
     text-decoration: none;
