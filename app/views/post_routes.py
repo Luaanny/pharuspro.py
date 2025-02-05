@@ -1,10 +1,11 @@
 from datetime import datetime
 
 from flask import Blueprint, render_template, redirect, redirect, url_for, request
-from flask_login import current_user
+from flask_login import current_user, login_required
 
 from app.extensions.database import  db
 from app.models.Consumo import Consumo
+from app.Controllers.user_controller import role_required
 
 post_bp = Blueprint('post', __name__)
 
@@ -75,3 +76,14 @@ def dicas():
     ]
 
     return render_template('pages/dicas.html', tips=tips, include_sidebar=True, include_header=True)
+
+@post_bp.route('/admin')
+@login_required
+@role_required('admin')
+def admin_dashboard():
+    return "Bem-vindo ao painel de administração!"
+
+@post_bp.route('/User')
+@login_required
+def user_dashboard():
+    return f'Olá {current_user.username}! Este é o painel do usuário.'

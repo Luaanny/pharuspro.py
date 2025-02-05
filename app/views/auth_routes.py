@@ -23,7 +23,7 @@ def login():
             flash('Login realizado com sucesso!', 'success')
             return redirect(url_for('post.index'))
 
-        flash('Nome de usuário ou senha incorretos', 'error')
+        flash('Email ou senha incorretos', 'error')
 
     return render_template('auth/login.html', include_sidebar=False, include_header=False)
 
