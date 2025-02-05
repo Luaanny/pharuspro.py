@@ -10,7 +10,7 @@
                 </a>
             {% endif %}
         </div>
-        <ul id="side_items" class="list-unstyled">
+        <ul id="side_items" class="list-unstyled mt-5">
             <li class="side_item">
                 <a href="{{ url_for('post.index') }}">
                     <i class="bi bi-house"></i>
@@ -44,12 +44,14 @@
         </ul>
     </div>
 
-    {% if current_user.is_authenticated %}
-        <button class="btn mb-2 bg-transparent border-0 w-100" type="button">
-            <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel">
-                <i class="bi bi-box-arrow-right"></i>
-                <span class="item-description">Sair</span>
-            </a>
-        </button>
-    {% endif %}
+    <div class="bottom w-100">
+        {% if current_user.is_authenticated %}
+            <button class="btn mb-2 bg-transparent border-0 w-100" type="button">
+                <a href="#" class="exit" data-bs-toggle="modal" data-bs-target="#logoutModel">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span class="item-description">Sair</span>
+                </a>
+            </button>
+        {% endif %}
+    </div>
 </div>

@@ -24,7 +24,8 @@
     width: 260px;
 }
 
-.sidebar .side_item a {
+.sidebar .side_item a,
+.exit {
     display: flex;
     gap: 10px;
     color: #ffff;
@@ -102,7 +103,8 @@
     color: white;
 }
 
-.sidebar .side_item a:hover{
+.sidebar .side_item a:hover,
+.exit:hover{
     background:  #ffc107;
     color: #fff;
     border-left: 3px solid white;
