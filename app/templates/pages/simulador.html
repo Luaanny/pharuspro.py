@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Simulador {% endblock %}
+{% block css %}simulador{% endblock %}
+{% block content %}
+
+    <form action="{{ url_for('post.simulador') }}" method="post">
+        <label for="potency">Potência (W)</label>
+        <input type="number" name="potency" id="potency" required> <br>
+
+        <label for="time_interval">Tempo de uso diário (h)</label>
+        <input type="number" name="time_interval" id="time_interval" required> <br>
+
+        <label for="tariff">Tarifa (R$/kWh)</label>
+        <input type="number" name="tariff" id="tariff" required> <br>
+
+        <button type="submit">Calcular Consumo Mensal</button>
+    </form>
+
+{% endblock %}
