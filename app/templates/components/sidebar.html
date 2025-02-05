@@ -2,12 +2,12 @@
     <div class="top">
         <div class="user d-flex gap-2 justify-content-center">
             {% if current_user.is_authenticated %}
-                <div class="w-100 d-flex gap-3 align-items-center">
+                <a class="w-100 d-flex gap-3 align-items-center user-info" href="{{ url_for('post.profile') }}">
                     <div class="user-img">
                         <img src="../../static/imgs/user-profile-image.png" alt="">
                     </div>
                     <h4 class="item-description mt-1 username fw-bolder">{{ current_user.username }}</h4>
-                </div>
+                </a>
             {% endif %}
         </div>
         <ul id="side_items" class="list-unstyled">

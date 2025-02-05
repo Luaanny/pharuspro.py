@@ -36,7 +36,7 @@ def register():
 
         if User.query.filter_by(email=email).first():
             flash('Email já cadastrado', 'error')
-            return redirect(url_for('auth_bp.cadastrar'))
+            return redirect(url_for('auth_bp.register'))
 
         hashed_password = generate_password_hash(request.form['senha'], method='pbkdf2:sha256')
         new_user = User(username=nome, email=email, password=hashed_password)

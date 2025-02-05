@@ -27,6 +27,10 @@ def metas():
     return render_template('pages/metas.html', include_sidebar=True, include_header=True, consumo_mensal=consumo_mensal,
                            faixa_min=faixa_min, faixa_max=faixa_max)
 
+@post_bp.route('/profile', methods=['GET', 'POST'])
+def profile():
+    return 'você chegou na página de perfil'
+
 @post_bp.route('/simulador', methods=['POST', 'GET'])
 def simulador():
     consumo_mensal = None

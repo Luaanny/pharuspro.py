@@ -24,7 +24,7 @@
     width: 260px;
 }
 
-.sidebar a {
+.sidebar .side_item a {
     display: flex;
     gap: 10px;
     color: #ffff;
@@ -97,7 +97,12 @@
     margin-top: 40px;
 }
 
-.sidebar a:hover{
+.user-info {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar .side_item a:hover{
     background:  #ffc107;
     color: #fff;
     border-left: 3px solid white;
