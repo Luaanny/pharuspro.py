@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}profile{% endblock %}
+{% block css %}profile{% endblock %}
+{% block content %}
+    <div class="container vh-75 p-4 d-flex gap-3">
+        <div class="col-c background h-100">
+            <ul class="list-unstyled p-4">
+                <li class="d-flex gap-3 align-items-center user-img">
+                    <img src="../../static/imgs/user-profile-image.png" alt="">
+                    <h4 class="item-description mt-1 username fw-bolder">{{ current_user.username }}</h4>
+                </li>
+                <li class="user-info-tab table-active w-100">
+                    <button class="w-100 btn btn-outline-secondary">informações</button>
+                </li>
+                <li class="site-config-tab table-active w-100">
+                    <button class="w-100 btn btn-outline-secondary">configurações</button>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 background h-100">
+            <form action="{{ url_for('post.profile') }}" method="post">
+                <label for="username">nome</label>
+                <input type="text" name="username" value="{{ current_user.username }}" disabled>
+                <label for="email">email:</label>
+                <input type="email" name="email" value="{{ current_user.email }}" disabled>
+                <label for="role">Cargo</label>
+                <input type="text" name="role" value="{{ current_user.role }}" disabled>
+                <button type="submit" >enviar</button>
+            </form>
+
+            <button id="editButton" onclick="enableEditting()"><i class="bi bi-pencil"></i></button>
+            <button class="d-none" id="saveButton" onclick="save()"><i class="bi bi-check2"></i></button>
+        </div>
+    </div>
+
+    {% block js %}profile{% endblock %}
+{% endblock %}

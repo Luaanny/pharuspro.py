@@ -3,13 +3,14 @@
 {% block css %}ideal_de_consumo{% endblock %}
 {% block content %}
 
-<main>
     <section class="container">
         <div class="row align-items-center">
             <div class="col-6">
                 <div class="text-left">
                     <h2>Ideal de consumo: <br> de 140 a 280 reais</h2>
-                    <p>Aqui você tem acesso a um questionário simples onde suas respostas são registradas e analisadas com os dados de outros usuários, gerando assim uma ficha de consumo para podermos te dar um maior suporte a partir de possíveis soluções para seus problemas.</p>
+                    <p>Aqui você tem acesso a um questionário simples onde suas respostas são registradas e analisadas
+                        com os dados de outros usuários, gerando assim uma ficha de consumo para podermos te dar um
+                        maior suporte a partir de possíveis soluções para seus problemas.</p>
                 </div>
             </div>
 
@@ -44,24 +45,23 @@
                 <script>
                     function showQuestion(questionId) {
                         const questions = document.querySelectorAll('.question');
-                        questions.forEach(question => question.style.display = 'none'); 
+                        questions.forEach(question => question.style.display = 'none');
                         document.getElementById(questionId).style.display = 'block';
                     }
 
-                    document.getElementById('showquestionbtn1').addEventListener('click', function() {
+                    document.getElementById('showquestionbtn1').addEventListener('click', function () {
                         showQuestion('question1');
                     });
 
-                    document.getElementById('showquestionbtn2').addEventListener('click', function() {
+                    document.getElementById('showquestionbtn2').addEventListener('click', function () {
                         showQuestion('question2');
                     });
 
-                    document.getElementById('showquestionbtn3').addEventListener('click', function() {
+                    document.getElementById('showquestionbtn3').addEventListener('click', function () {
                         showQuestion('question3');
                     });
                 </script>
             </div>
         </div>
     </section>
-</main>
 {% endblock %}

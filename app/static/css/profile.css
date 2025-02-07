@@ -1,0 +1,23 @@
+.background {
+    background-color: #343A40;
+    color: white;
+}
+
+.col-c {
+    width: 13%;
+}
+
+main {
+    margin: 0;
+}
+
+.container {
+    max-width: 95% !important;
+}
+
+.user-img img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 20px;
+}

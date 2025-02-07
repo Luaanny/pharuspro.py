@@ -3,19 +3,17 @@
 {% block css %}dicas{% endblock %}
 {% block content %}
 
-    <main>
-        <section class="container mt-2 pt-2">
-            <ul class="tips row row-gap-3">
-                <h1>Dicas para Economizar Energia</h1>
-                {% for tip in tips %}
-                    <div class="col-md-4">
-                        <li class="tip-block text-center d-flex align-items-center justify-content-center">
-                            <p>{{ tip }}</p>
-                        </li>
-                    </div>
-                {% endfor %}
-            </ul>
-        </section>
-    </main>
+    <section class="container mt-2 pt-2">
+        <ul class="tips row row-gap-3">
+            <h1>Dicas para Economizar Energia</h1>
+            {% for tip in tips %}
+                <div class="col-md-4">
+                    <li class="tip-block text-center d-flex align-items-center justify-content-center">
+                        <p>{{ tip }}</p>
+                    </li>
+                </div>
+            {% endfor %}
+        </ul>
+    </section>
 
 {% endblock %}

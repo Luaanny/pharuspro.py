@@ -72,7 +72,9 @@
             </div>
             <div class="modal-footer d-flex justify-content-between">
                 <button type="button" class="btn" data-bs-dismiss="modal">Fechar</button>
-                <button class="btn exit-btn"><a href="{{ url_for('auth_bp.logout') }}">Sair</a></button>
+                <a href="{{ url_for('auth_bp.logout') }}">
+                    <button class="btn exit-btn">Sair</button>
+                </a>
             </div>
         </div>
     </div>
@@ -89,7 +91,9 @@
 {% endif %}
 
 <!-- Conteúdo Principal da Página -->
-{% block content %}{% endblock %}
+<main>
+    {% block content %}{% endblock %}
+</main>
 
 <!-- Bootstrap e Script para exibir Toasts -->
 <script

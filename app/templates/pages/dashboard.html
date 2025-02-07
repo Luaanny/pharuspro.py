@@ -2,45 +2,43 @@
 {% block titulo %} Pharus - Página inicial {% endblock %}
 {% block css %}dashboard{% endblock %}
 {% block content %}
-    <main>
-        <section class="principal container-fluid mt-2 px-5">
-            <div class="row g-3">
-                {% if current_user.role == 'admin' %}
-                    <div class="col-md-3">
-                        <a class="quadrado" href="{{ url_for('auth_bp.register') }}">
-                            <img src="../../static/imgs/adicionar-usuario 1.png" alt=""/>
-                            <h2>Cadastrar novos usuários</h2>
-                        </a>
-                    </div>
-                {% endif %}
+    <section class="principal container-fluid mt-2 px-5">
+        <div class="row g-3">
+            {% if current_user.role == 'admin' %}
                 <div class="col-md-3">
-                    <a class="quadrado" href="post_bp.admins">
-                        <img src="../../static/imgs/conversa-em-grupo%201.png" alt=""/>
-                        <h2>Listar todos os administradores</h2>
+                    <a class="quadrado" href="{{ url_for('auth_bp.register') }}">
+                        <img src="../../static/imgs/adicionar-usuario 1.png" alt=""/>
+                        <h2>Cadastrar novos usuários</h2>
                     </a>
                 </div>
-                <div class="col-md-3">
-                    <a class="quadrado" href="#">
-                        <img src="../../static/imgs/bandeira-em-formato-preto (1) 1.png" alt=""/>
-                        <h2>Editar bandeira</h2>
+            {% endif %}
+            <div class="col-md-3">
+                <a class="quadrado" href="post_bp.admins">
+                    <img src="../../static/imgs/conversa-em-grupo%201.png" alt=""/>
+                    <h2>Listar todos os administradores</h2>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a class="quadrado" href="#">
+                    <img src="../../static/imgs/bandeira-em-formato-preto (1) 1.png" alt=""/>
+                    <h2>Editar bandeira</h2>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a class="quadrado" href="#">
+                    <img src="../../static/imgs/mensagens (1) 1.png" alt=""/>
+                    <h2>Mensagens</h2>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <div class="d-flex flex-column">
+                    <a class="bigger" href="#">
+                        <img src="../../static/imgs/lampada 1.png" alt=""/>
+                        <h2>Listagem de dicas</h2>
                     </a>
-                </div>
-                <div class="col-md-3">
-                    <a class="quadrado" href="#">
-                        <img src="../../static/imgs/mensagens (1) 1.png" alt=""/>
-                        <h2>Mensagens</h2>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <div class="d-flex flex-column">
-                        <a class="bigger" href="#">
-                            <img src="../../static/imgs/lampada 1.png" alt=""/>
-                            <h2>Listagem de dicas</h2>
-                        </a>
-                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
 {% endblock %}
