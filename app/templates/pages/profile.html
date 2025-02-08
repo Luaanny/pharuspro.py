@@ -17,19 +17,18 @@
                 </li>
             </ul>
         </div>
-        <div class="col-10 background h-100">
+        <div class="col-10 background h-100 p-4">
             <form action="{{ url_for('post.profile') }}" method="post">
                 <label for="username">nome</label>
                 <input type="text" name="username" value="{{ current_user.username }}" disabled>
                 <label for="email">email:</label>
                 <input type="email" name="email" value="{{ current_user.email }}" disabled>
-                <label for="role">Cargo</label>
-                <input type="text" name="role" value="{{ current_user.role }}" disabled>
-                <button type="submit" >enviar</button>
             </form>
-
+            <label for="gasto">Gasto:</label>
+            <span type="email" name="gasto">Um bilhão de whatts mensais</span>
             <button id="editButton" onclick="enableEditting()"><i class="bi bi-pencil"></i></button>
-            <button id="deleteButton" data-user-id="{{ current_user.id }}" onclick="deleteUser()"><i class="bi bi-trash3"></i></button>
+            <button id="deleteButton" data-user-id="{{ current_user.id }}" onclick="deleteUser()"><i
+                    class="bi bi-trash3"></i></button>
             <button class="d-none" id="saveButton" onclick="save()"><i class="bi bi-check2"></i></button>
         </div>
     </div>

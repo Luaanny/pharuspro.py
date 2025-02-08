@@ -35,25 +35,27 @@ def metas():
 @post_bp.route('/profile', methods=['GET', 'POST'])
 @login_required
 def profile():
-    can_edit = current_user.role == 'admin'
 
-    if request.method == 'POST' and can_edit:
+    if request.method == 'POST':
         username = request.form.get('username')
         email = request.form.get('email')
-        role = request.form.get('role')
 
-        if not username or not email or not role:
+        if not username or not email:
             flash("Todos os campos são obrigatórios.", "error")
         else:
-            current_user.username = username
-            current_user.email = email
-            current_user.role = role
-            db.session.commit()
-            flash("Perfil atualizado com sucesso!", "success")
+            if User.query.filter_by(username=username).first() and current_user.username != username:
+                flash("Esse nome de usuário já está em uso.", "error")
+            elif User.query.filter_by(email=email).first() and current_user.email != email:
+                flash("Esse e-mail já está em uso.", "error")
+            else:
+                current_user.username = username
+                current_user.email = email
+                db.session.commit()
+                flash("Perfil atualizado com sucesso!", "success")
 
         return redirect(url_for('post.profile'))
 
-    return render_template("pages/profile.html", include_header=True, can_edit=can_edit)
+    return render_template("pages/profile.html", include_header=True)
 
 
 @post_bp.route('/delete/<int:user_id>', methods=["DELETE"])
@@ -73,6 +75,10 @@ def delete(user_id):
     db.session.commit()
 
     return jsonify({"message": f"user {user.username} deletado com sucesso!"}), 200, flash(f"user {user.username} deletado com sucesso!")
+
+
+@post_bp.route('/listar_eletronicos', methods=["POST", "GET"])
+def listar_eletronicos():
 
 
 @post_bp.route('/simulador', methods=['POST', 'GET'])

@@ -15,6 +15,9 @@ function enableEditting() {
 }
 
 function save() {
+    let form = document.querySelector('form');
+
+    form.submit()
 
     inputs.forEach(input => {
         input.setAttribute('disabled', "disabled");

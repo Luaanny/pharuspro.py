@@ -2,13 +2,13 @@
     background-color: #343A40;
     overflow: hidden;
     position: absolute;
-    height: calc(100% - 90px);
+    height: calc(100% - 80px);
     width: 110px;
     top: 0;
     left: 0;
     padding: 0 10px;
     z-index: 1000 !important;
-    margin-top: 90px;
+    margin-top: 80px;
     transition: width ease-in-out .5s;
     color: white;
 }
