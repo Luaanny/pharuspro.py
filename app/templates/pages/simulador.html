@@ -1,19 +1,45 @@
 {% extends 'base.html' %}
-{% block title %} Simulador {% endblock %}
-{% block css %}simulador{% endblock %}
+
+{% block title %} Listagem de Aparelhos {% endblock %}
+
 {% block content %}
+    <div class="container">
 
-    <form action="{{ url_for('post.simulador') }}" method="post">
-        <label for="potency">Potência (W)</label>
-        <input type="number" name="potency" id="potency" required> <br>
+        <!-- Formulário para adicionar novos aparelhos -->
+        <form action="{{ url_for('consumo.simulador') }}" method="post">
+            <div>
+                <label for="aparelho">Nome do Aparelho:</label>
+                <input type="text" name="aparelho" id="aparelho" placeholder="Nome do eletrodoméstico" required><br>
+            </div>
+            <div>
+                <label for="potency">Potência (W):</label>
+                <input type="number" name="potency" id="potency" placeholder="Potência (em Watts)" required><br>
+            </div>
+            <div>
+                <label for="time_interval">Tempo de uso diário (h):</label>
+                <input type="number" name="time_interval" id="time_interval" placeholder="Tempo de uso diário (em horas)" required><br>
+            </div>
+            <div>
+                <label for="consumo_mensal">Consumo Mensal (kWh):</label>
+                <input type="number" name="consumo_mensal" id="consumo_mensal" placeholder="Consumo mensal em kWh" required><br>
+            </div>
+            <div>
+                <button type="submit">Adicionar Aparelho</button>
+            </div>
+        </form>
 
-        <label for="time_interval">Tempo de uso diário (h)</label>
-        <input type="number" name="time_interval" id="time_interval" required> <br>
-
-        <label for="tariff">Tarifa (R$/kWh)</label>
-        <input type="number" name="tariff" id="tariff" required> <br>
-
-        <button type="submit">Calcular Consumo Mensal</button>
-    </form>
-
+        <!-- Lista de aparelhos cadastrados -->
+        <h4>Lista de Aparelhos</h4>
+        <ul>
+            {% for consumo in consumos %}
+                <li>
+                    <strong>{{ consumo.aparelho }}</strong> - Potência: {{ consumo.potency }} W,
+                    Tempo de uso: {{ consumo.time_interval }} horas,
+                    Consumo Mensal: {{ consumo.consumo_mensal }} kWh
+                </li>
+            {% else %}
+                <li>Nenhum aparelho cadastrado.</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
