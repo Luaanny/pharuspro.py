@@ -79,7 +79,7 @@ def delete(user_id):
 
 @post_bp.route('/listar_eletronicos', methods=["POST", "GET"])
 def listar_eletronicos():
-
+    pass
 
 @post_bp.route('/simulador', methods=['POST', 'GET'])
 def simulador():
