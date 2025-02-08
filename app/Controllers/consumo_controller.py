@@ -10,9 +10,9 @@ def simulador():
     if request.method == 'POST':
         # Pegando os dados do formulário
         aparelho = request.form['aparelho']
-        potency = request.form['potency']
-        time_interval = request.form['time_interval']
-        consumo_mensal = request.form['consumo_mensal']
+        potency = float(request.form['potency'])
+        time_interval = float(request.form['time_interval'])
+        consumo_mensal = (potency*time_interval*30)/1000
 
         # Criando o novo consumo
         novo_consumo = Consumo(
@@ -27,7 +27,7 @@ def simulador():
         db.session.add(novo_consumo)
         db.session.commit()
 
-        return redirect(url_for('post.simulador'))
+        return redirect(url_for('consumo.simulador'))
 
     # Se for GET, exibe a lista de aparelhos
     consumos = Consumo.query.all()  # Recuperando todos os aparelhos cadastrados
