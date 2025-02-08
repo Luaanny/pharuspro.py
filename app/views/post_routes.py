@@ -1,11 +1,12 @@
 from datetime import datetime
 
-from flask import Blueprint, render_template, redirect, redirect, url_for, request, flash
-from flask_login import current_user, login_required
+from flask import Blueprint, render_template, redirect, redirect, url_for, request, flash, jsonify
+from flask_login import current_user, login_required, logout_user
 
 from app.extensions.database import db
 from app.models.Consumo import Consumo
 from app.Controllers.user_controller import role_required
+from app.models.User import User
 
 post_bp = Blueprint('post', __name__)
 
@@ -34,7 +35,7 @@ def metas():
 @post_bp.route('/profile', methods=['GET', 'POST'])
 @login_required
 def profile():
-    can_edit = current_user.role == 'admin' 
+    can_edit = current_user.role == 'admin'
 
     if request.method == 'POST' and can_edit:
         username = request.form.get('username')
@@ -53,6 +54,25 @@ def profile():
         return redirect(url_for('post.profile'))
 
     return render_template("pages/profile.html", include_header=True, can_edit=can_edit)
+
+
+@post_bp.route('/delete/<int:user_id>', methods=["DELETE"])
+@login_required
+def delete(user_id):
+    if current_user.id != user_id:
+        return jsonify({"error": "unauthorized"}), 403
+
+    user = User.query.get(user_id)
+
+    if not user:
+        return jsonify({"error": "user not found"}), 404
+
+    logout_user()
+
+    db.session.delete(user)
+    db.session.commit()
+
+    return jsonify({"message": f"user {user.username} deletado com sucesso!"}), 200, flash(f"user {user.username} deletado com sucesso!")
 
 
 @post_bp.route('/simulador', methods=['POST', 'GET'])

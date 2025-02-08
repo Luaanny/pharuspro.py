@@ -3,7 +3,7 @@
 {% block css %}profile{% endblock %}
 {% block content %}
     <div class="container vh-75 p-4 d-flex gap-3">
-        <div class="col-c background h-100">
+        <div class="col-2 background h-100">
             <ul class="list-unstyled p-4">
                 <li class="d-flex gap-3 align-items-center user-img">
                     <img src="../../static/imgs/user-profile-image.png" alt="">
@@ -29,9 +29,10 @@
             </form>
 
             <button id="editButton" onclick="enableEditting()"><i class="bi bi-pencil"></i></button>
+            <button id="deleteButton" data-user-id="{{ current_user.id }}" onclick="deleteUser()"><i class="bi bi-trash3"></i></button>
             <button class="d-none" id="saveButton" onclick="save()"><i class="bi bi-check2"></i></button>
         </div>
     </div>
 
-    {% block js %}profile{% endblock %}
+    <script src="../../static/js/profile.js"></script>
 {% endblock %}
