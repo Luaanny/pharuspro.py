@@ -19,7 +19,4 @@ def create_app(config_class="app.config.DevelopmentConfig"):
     from app.error_handlers import register_error_handlers
     register_error_handlers(app)
 
-    with app.app_context():
-        db.create_all()
-
     return app
