@@ -11,6 +11,7 @@ def create_app(config_class="app.config.DevelopmentConfig"):
     db.init_app(app)
     migrate.init_app(app, db)
     lm.init_app(app)
+    lm.login_view = 'auth_bp.login'
 
     from app.Controllers.consumo_controller import consumo_bp
     from app.Controllers.user_controller import user_bp

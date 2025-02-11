@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %} Listagem de Aparelhos {% endblock %}
+{% block css %}simulador{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -17,25 +18,17 @@
             </div>
             <div>
                 <label for="time_interval">Tempo de uso diário (h):</label>
-                <input type="number" name="time_interval" id="time_interval" placeholder="Tempo de uso diário (em horas)" required><br>
+                <input type="number" name="time_interval" id="time_interval"
+                       placeholder="Tempo de uso diário (em horas)" required><br>
             </div>
             <div>
                 <button type="submit">Adicionar Aparelho</button>
             </div>
         </form>
 
-        <!-- Lista de aparelhos cadastrados -->
-        <h4>Lista de Aparelhos</h4>
-        <ul>
-            {% for consumo in consumos %}
-                <li>
-                    <strong>{{ consumo.aparelho }}</strong> - Potência: {{ consumo.potency }} W,
-                    Tempo de uso: {{ consumo.time_interval }} horas,
-                    Consumo Mensal: {{ consumo.consumo_mensal }} kWh
-                </li>
-            {% else %}
-                <li>Nenhum aparelho cadastrado.</li>
-            {% endfor %}
-        </ul>
+        {% include "components/aparelhos.html" %}
+        <div class="toggle-devices" id="devicesToggle"></div>
     </div>
+
+    <script src="../../static/js/simulador.js"></script>
 {% endblock %}

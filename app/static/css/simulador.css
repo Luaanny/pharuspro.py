@@ -1,0 +1,13 @@
+body {
+    overflow-x: hidden;
+}
+
+.toggle-devices {
+    width: .5rem;
+    height: 18rem;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}

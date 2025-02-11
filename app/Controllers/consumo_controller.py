@@ -1,11 +1,12 @@
 from flask import Blueprint, request, redirect, url_for, render_template
 from app.extensions.database import db
 from app.models.Consumo import Consumo
-from flask_login import current_user
+from flask_login import current_user, login_required
 
 consumo_bp = Blueprint('consumo', __name__)
 
 @consumo_bp.route('/simulador', methods=['POST', 'GET'])
+@login_required
 def simulador():
     if request.method == 'POST':
         # Pegando os dados do formulário

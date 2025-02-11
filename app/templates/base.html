@@ -6,6 +6,7 @@
 
     <!-- CSS Base e específico para páginas -->
     <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="/static/css/aparelhos.css">
 
     {% if include_sidebar %}
         <link rel="stylesheet" href="../static/css/sidebar.css"/>
@@ -45,6 +46,20 @@
 </head>
 <body>
 
+<!-- Header -->
+{% if include_header %}
+    {% include "components/header.html" %}
+{% endif %}
+
+<!-- SideBar -->
+{% if include_sidebar %}
+    {% include "components/sidebar.html" %}
+{% endif %}
+
+<!-- Conteúdo Principal da Página -->
+<main>
+    {% block content %}{% endblock %}
+</main>
 <!-- Toast Container -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     {% set mensagens = get_flashed_messages(with_categories=true) %}
@@ -79,21 +94,6 @@
         </div>
     </div>
 </div>
-
-<!-- Header -->
-{% if include_header %}
-    {% include "components/header.html" %}
-{% endif %}
-
-<!-- SideBar -->
-{% if include_sidebar %}
-    {% include "components/sidebar.html" %}
-{% endif %}
-
-<!-- Conteúdo Principal da Página -->
-<main>
-    {% block content %}{% endblock %}
-</main>
 
 <!-- Bootstrap e Script para exibir Toasts -->
 <script

@@ -1,0 +1,6 @@
+.listagem-aparelhos {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+}

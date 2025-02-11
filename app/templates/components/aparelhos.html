@@ -1,0 +1,20 @@
+<!-- Lista de aparelhos cadastrados -->
+<div class="listagem-aparelhos" id="devicesList">
+    <h4>Lista de Aparelhos</h4>
+    <ul class="list-unstyled">
+        {% for consumo in consumos %}
+            <li>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ consumo.aparelho }}</h5>
+                        <p class="card-text">Potência: {{ consumo.potency }}</p>
+                        <p class="card-text">Tempo de uso: {{ consumo.time_interval }}</p>
+                        <p class="card-text">Consumo mensal: {{ consumo.consumo_mensal }}</p>
+                    </div>
+                </div>
+            </li>
+        {% else %}
+            <li>Nenhum aparelho cadastrado.</li>
+        {% endfor %}
+    </ul>
+</div>
