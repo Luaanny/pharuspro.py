@@ -4,7 +4,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', "lua_linda")
     SQLALCHEMY_DATABASE_URI = os.getenv(
         "DATABASE_URL",
-        "mysql://davi:1324@localhost/pharus_db"
+        "sqlite:///pharus.db"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 

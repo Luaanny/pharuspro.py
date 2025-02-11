@@ -18,6 +18,7 @@ def login():
         senha = request.form['senha']
 
         user = User.query.filter_by(email=email).first()
+        print(f'usur: {user}')
         if user and check_password_hash(user.password, senha):
             login_user(user)
             flash('Login realizado com sucesso!', 'success')
