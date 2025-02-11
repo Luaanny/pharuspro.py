@@ -110,7 +110,10 @@
         toastList.forEach(toast => toast.show());
     });
 </script>
-<script src="../static/js/sidebar.js"></script>
+
+{% if include_sidebar %}
+    <script src="../static/js/sidebar.js"></script>
+{% endif %}
 
 </body>
 </html>
