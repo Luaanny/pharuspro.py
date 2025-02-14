@@ -13,6 +13,7 @@ def index():
 
 
 @post_bp.route('/metas', methods=['GET', 'POST'])
+@login_required
 def metas():
     consumo_mensal = db.session.query(Consumo).filter_by(user_id=current_user.id).order_by(Consumo.date.desc()).first()
     print(
