@@ -3,7 +3,7 @@ from app.extensions.database import db
 
 class Consumo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)  # Define valor padrão
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)  
     potency = db.Column(db.Float, nullable=False)
     aparelho = db.Column(db.String(80), nullable=False)
     time_interval = db.Column(db.Float, nullable=False)

@@ -9,13 +9,13 @@ consumo_bp = Blueprint('consumo', __name__)
 @login_required
 def simulador():
     if request.method == 'POST':
-        # Pegando os dados do formulário
+        
         aparelho = request.form['aparelho']
         potency = float(request.form['potency'])
         time_interval = float(request.form['time_interval'])
         consumo_mensal = (potency*time_interval*30)/1000
 
-        # Criando o novo consumo
+        
         novo_consumo = Consumo(
             aparelho=aparelho,
             potency=float(potency),
@@ -24,12 +24,12 @@ def simulador():
             user=current_user
         )
 
-        # Adicionando no banco
+       
         db.session.add(novo_consumo)
         db.session.commit()
 
         return redirect(url_for('consumo.simulador'))
 
-    # Se for GET, exibe a lista de aparelhos
-    consumos = Consumo.query.all()  # Recuperando todos os aparelhos cadastrados
+    
+    consumos = Consumo.query.all()  
     return render_template('pages/simulador.html', consumos=consumos, include_header=True, include_sidebar=True)
