@@ -65,15 +65,21 @@
     {% set mensagens = get_flashed_messages(with_categories=true) %}
     {% if mensagens %}
         {% for category, message in mensagens %}
-            <div class="toast align-items-center text-bg-{{ 'danger' if category == 'error' else 'success' }} border-0"
-                 role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="5000">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        {{ message }}
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                            aria-label="Close"></button>
+            <div class="toast align-items-center border-0"
+                 border-0"
+            role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="5000">
+            <div class="d-flex flex-column">
+                <div class="toast-header text-bg-{{ 'danger' if category == 'error' else 'success' if category == 'success' else 'info' }} ">
+                    <img src="{{ url_for('static', filename='Pharus_logo.ico') }}" class="rounded toast-img me-2"
+                         alt="...">
+                    <strong class="me-auto">
+                        {{ 'Sucesso' if category == 'success' else 'erro' if category == 'error' else 'Dica' }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
+                <div class="toast-body">
+                    {{ message }}
+                </div>
+            </div>
             </div>
         {% endfor %}
     {% endif %}

@@ -1,6 +1,7 @@
 const devicesToggle = document.querySelector('#devicesToggle')
 const devicesList = document.querySelector("#devicesList")
 const cardListCLose = document.querySelector('#cardListClose')
+const deviceAddForms = document.querySelector('#deviceAddForms')
 
 function showDevices () {
     devicesList.classList.add('enter')

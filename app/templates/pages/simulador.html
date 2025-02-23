@@ -7,7 +7,7 @@
     <div class="container">
 
         <!-- Formulário para adicionar novos aparelhos -->
-        <form action="{{ url_for('consumo.device_register') }}" method="post">
+        <form action="{{ url_for('consumo.device_register') }}" method="post" id="deviceAddForms">
             <div>
                 <label for="aparelho">Nome do Aparelho:</label>
                 <input type="text" name="aparelho" id="aparelho" placeholder="Nome do eletrodoméstico" required><br>
