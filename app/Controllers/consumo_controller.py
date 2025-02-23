@@ -62,4 +62,4 @@ def delete(consumo_id):
         db.session.commit()
 
         return jsonify({"message": f"user {consumo.aparelho} deletado com sucesso!"}), 200, flash(
-            f"user {consumo.aparelho} deletado com sucesso!", 'success')
+            f"aparelho {consumo.aparelho} deletado com sucesso!", 'success')
