@@ -6,6 +6,7 @@ class Config:
         "DATABASE_URL",
         "sqlite:///pharus.db"
     )
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     login_view = 'auth_bp.login'
 

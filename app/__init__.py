@@ -3,7 +3,6 @@ from app.extensions.database import db
 from app.extensions.migrate import migrate
 from app.extensions.flask_login import lm
 
-
 def create_app(config_class="app.config.DevelopmentConfig"):
     app = Flask(__name__)
     app.config.from_object(config_class)
@@ -15,7 +14,7 @@ def create_app(config_class="app.config.DevelopmentConfig"):
 
     from app.Controllers.consumo_controller import consumo_bp
     from app.Controllers.user_controller import user_bp
-    from app.views.auth_routes import auth_bp
+    from app.Controllers.auth_controller import auth_bp
     from app.views.post_routes import post_bp
 
     app.register_blueprint(auth_bp)

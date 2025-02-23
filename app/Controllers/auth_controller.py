@@ -1,9 +1,10 @@
-from flask import session, Blueprint, render_template, redirect, url_for, flash, request
-from werkzeug.security import generate_password_hash, check_password_hash
-from app.models.User import User
+from functools import wraps
+from flask import abort, Blueprint, render_template, request, jsonify, flash, redirect, url_for
+from werkzeug.security import check_password_hash, generate_password_hash
 from app.extensions.database import db
+from app.models.User import User
+from flask_login import current_user, login_required, logout_user, login_user
 from app.extensions.flask_login import lm
-from flask_login import login_user, logout_user
 
 auth_bp = Blueprint('auth_bp', __name__, url_prefix='/auth')
 
@@ -38,7 +39,7 @@ def register():
             flash('Email já cadastrado', 'error')
             return redirect(url_for('auth_bp.register'))
 
-        hashed_password = generate_password_hash(request.form['senha'], method='pbkdf2:sha256')
+        hashed_password = generate_password_hash(senha, method='pbkdf2:sha256')
         new_user = User(username=nome, email=email, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
@@ -46,7 +47,7 @@ def register():
         login_user(new_user)
 
         flash('Cadastro realizado com sucesso!', 'success')
-        return redirect(url_for('auth_bp.login'))
+        return redirect(url_for('post.index'))
 
     return render_template('auth/cadastro.html', include_sidebar=False, include_header=False)
 

@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="pharus_db@localhost" uuid="08c00713-a1c6-4d60-a53c-00ed77855426">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/pharus_db</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="pharus" uuid="255d2ad1-6785-49c2-8e6b-94b1429128b7">
+    <data-source source="LOCAL" name="pharus" uuid="f1e1c064-a3ba-400b-8421-12bf7693cc61">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\Users\20211041110034\PycharmProjects\pharuspro.py\instance\pharus.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/instance/pharus.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

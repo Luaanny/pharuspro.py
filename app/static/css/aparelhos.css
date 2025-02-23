@@ -3,4 +3,5 @@
     top: 50%;
     right: 0;
     transform: translate(100%, -50%);
+    max-height: calc(100% - 90px);
 }

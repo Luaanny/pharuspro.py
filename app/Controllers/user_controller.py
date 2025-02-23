@@ -1,8 +1,9 @@
 from functools import wraps 
 from flask import abort, Blueprint, render_template, request, jsonify, flash, redirect, url_for
+from werkzeug.security import check_password_hash, generate_password_hash
 from app.extensions.database import db
 from app.models.User import User
-from flask_login import current_user, login_required, logout_user
+from flask_login import current_user, login_required, logout_user, login_user
 
 user_bp = Blueprint('user', __name__)
 
