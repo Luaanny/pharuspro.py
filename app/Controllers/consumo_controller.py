@@ -8,7 +8,7 @@ consumo_bp = Blueprint('consumo', __name__)
 @consumo_bp.route('/simulador', methods=['GET'])
 @login_required
 def simulador():
-    consumos = Consumo.query.all()  
+    consumos = Consumo.query.filter_by(user_id=current_user.id).all()
     return render_template('pages/simulador.html', consumos=consumos, include_header=True, include_sidebar=True)
 
 @consumo_bp.route('/device_register', methods=['POST'])

@@ -10,7 +10,7 @@ class Consumo(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', name='fk_consumo_user',ondelete="CASCADE"), nullable=False)
     consumo_mensal = db.Column(db.Float, nullable=False)
 
-    user = db.relationship('User', backref='consumos_user')
+    user = db.relationship('User', back_populates="consumos")
 
     def __repr__(self):
         return f"<Consumo {self.id} - User {self.user_id}>"
