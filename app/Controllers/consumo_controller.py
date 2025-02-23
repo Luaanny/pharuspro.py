@@ -1,4 +1,5 @@
 from flask import Blueprint, request, redirect, url_for, render_template, flash, jsonify
+from sqlalchemy import select
 from app.extensions.database import db
 from app.models.Consumo import Consumo
 from flask_login import current_user, login_required
@@ -18,7 +19,11 @@ tips = [
 @login_required
 def simulador():
     consumos = Consumo.query.filter_by(user_id=current_user.id).all()
-    return render_template('pages/simulador.html', consumos=consumos, include_header=True, include_sidebar=True)
+
+    consumo_mensal = sum(consumo.consumo_mensal for consumo in consumos)
+    consumo_mensal = round(consumo_mensal, 2)
+
+    return render_template('pages/simulador.html', consumos=consumos, consumo_mensal=consumo_mensal,include_header=True, include_sidebar=True)
 
 
 @consumo_bp.route('/device_register', methods=['POST'])

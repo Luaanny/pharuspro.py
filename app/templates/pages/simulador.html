@@ -24,6 +24,10 @@
             </div>
         </form>
 
+        <div class="position-absolute d-flex flex-column align-items-center consumo-mensal-container">
+            <span>Seu consumo total</span>
+            <span class="consumo-total">R$ {{ consumo_mensal }}</span>
+        </div>
         {% include "components/aparelhos.html" %}
         <div class="toggle-devices" id="devicesToggle"></div>
     </div>

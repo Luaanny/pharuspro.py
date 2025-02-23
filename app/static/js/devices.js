@@ -1,9 +1,11 @@
-const deleteButton = document.querySelector('#deviceDeleteBtn')
-const editButton = document.querySelector('#deviceEdit')
-const saveButton = document.querySelector('#saveButton')
-const inputs = document.querySelectorAll('.card-text')
+function enableEditing(deviceId) {
+    const form = document.querySelector(`.updateDeviceForm[data-device-id="${deviceId}"]`);
+    const editButton = document.querySelector(`#deviceEdit${deviceId}`);
+    const saveButton = document.querySelector(`#saveButton${deviceId}`);
+    const inputs = form.querySelectorAll('.card-text');
 
-function enableEditting() {
+    console.log(editButton, saveButton);
+
     inputs.forEach(input => {
         input.removeAttribute("disabled");
     });
@@ -12,24 +14,23 @@ function enableEditting() {
     saveButton.classList.remove('d-none');
 }
 
-function save() {
+function save(deviceId) {
+    const form = document.querySelector(`.updateDeviceForm[data-device-id="${deviceId}"]`);
+    const editButton = document.querySelector(`#deviceEdit${deviceId}`);
+    const saveButton = document.querySelector(`#saveButton${deviceId}`);
+    const inputs = form.querySelectorAll('.card-text');
+
     inputs.forEach(input => {
-        input.setAttribute('disabled', "disabled");
+        input.setAttribute("disabled", 'disabled');
     });
 
     editButton.classList.remove('d-none');
-    saveButton.classList.add('d-none');
-
-    let form = document.querySelector('#updateDeviceForms');
-
+    saveButton.classList.add('d-none')
     form.addEventListener('submit', function (event) {
-        console.log('entrou')
         event.preventDefault();
-        console.log('entrou aq tmb')
 
-        const deviceId = form.getAttribute('data-device-id');
-        const potency = form.querySelector('#new_potency').value;
-        const timeInterval = form.querySelector('#new_time_interval').value;
+        const potency = form.querySelector(`#new_potency${deviceId}`).value;
+        const timeInterval = form.querySelector(`#new_time_interval${deviceId}`).value;
 
         fetch(`/update_device/${deviceId}`, {
             method: 'PUT',
@@ -44,35 +45,29 @@ function save() {
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
-                    console.log(data)
                     form.reset()
-                    window.location.reload();
+                    window.location.reload()
                 } else {
                     window.location.reload();
                 }
             })
             .catch(error => {
                 console.error('Erro:', error);
+                alert('Ocorreu um erro ao atualizar o dispositivo.');
             });
     });
 }
 
-function deleteDevice() {
-    const deviceID = deleteButton.getAttribute("data-device-id")
-
+function deleteDevice(deviceId) {
     if (!confirm("Tem certeza que deseja excluir esse aparelho? Esta ação não pode ser desfeita.")) {
         return;
     }
 
-    fetch(`/consumo/delete/${deviceID}`, {
+    fetch(`/consumo/delete/${deviceId}`, {
         method: "DELETE",
         credentials: "include"
     })
-        .then(response => response.text())
-        .then(text => {
-            console.log("Resposta do servidor:", text);
-            return JSON.parse(text);
-        })
+        .then(response => response.json())
         .then(data => {
             if (data.message) {
                 window.location.href = "/simulador";
