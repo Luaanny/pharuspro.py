@@ -1,0 +1,49 @@
+<!-- Lista de aparelhos cadastrados -->
+<div class="listagem-aparelhos overflow-y-scroll text-center" id="devicesList">
+    <div class="w-100 d-flex align-items-start p-2">
+        <button id="cardListClose" class="border-0 bg-transparent">
+            <i class="bi bi-x-circle"></i>
+        </button>
+    </div>
+    <h4>Lista de Aparelhos</h4>
+    <ul class="list-unstyled d-flex gap-2 flex-column">
+        {% for consumo in consumos %}
+            <li class="d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <form id="updateDeviceForms" data-device-id="{{ consumo.id }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ consumo.aparelho }}</h5>
+                            <div class="d-flex flex-column text-start mb-2">
+                                <label for="potency">Potência</label>
+                                <input class="card-text disabled" id="new_potency" name="potency" value="{{ consumo.potency }}"
+                                       disabled></input>
+                            </div>
+                            <div class="d-flex flex-column text-start mb-2">
+                                <label for="time_interval">Tempo de uso</label>
+                                <input class="card-text disabled" id="new_time_interval" name="time_interval"
+                                       value="{{ consumo.time_interval }}"
+                                       disabled></input>
+                            </div>
+                            <div class="d-flex flex-column text-start mb-2">
+                                <label for="consumo_mensal">Consumo mensal</label>
+                                <span id="consumo_mensal">{{ consumo.consumo_mensal }}</span>
+                            </div>
+                        </div>
+                        <div class="buttons p-2">
+                            <button type="button" id="deviceDeleteBtn" data-device-id="{{ consumo.id }}" onclick="deleteDevice()">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button type="button" id="deviceEdit" data-device-id="{{ consumo.id }}" onclick="enableEditting()">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button type="submit" class="d-none" id="saveButton" data-device-id="{{ consumo.id }}"
+                                    onclick="save()"><i class="bi bi-check2"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+        {% else %}
+            <li>Nenhum aparelho cadastrado.</li>
+        {% endfor %}
+    </ul>
+</div>

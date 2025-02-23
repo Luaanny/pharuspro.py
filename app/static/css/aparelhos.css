@@ -1,0 +1,27 @@
+.listagem-aparelhos {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+    opacity: 0;
+    max-height: calc(100% - 250px);
+    height: 100vh;
+    width: 300px;
+    background: white;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease-in-out;
+}
+
+.listagem-aparelhos.enter {
+    transform: translate(0, -50%) !important;
+    opacity: 1;
+}
+
+.listagem-aparelhos.exit {
+    transform: translate(100%, -50%) !important;
+    opacity: 0;
+}
+
+.card-text.disabled {
+    border: none;
+}

@@ -18,7 +18,7 @@
             </ul>
         </div>
         <div class="col-10 background h-100 p-4">
-            <form action="{{ url_for('post.profile') }}" method="post">
+            <form action="{{ url_for('user.update_profile') }}" method="post">
                 <label for="username">nome</label>
                 <input type="text" name="username" value="{{ current_user.username }}" disabled>
                 <label for="email">email:</label>

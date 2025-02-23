@@ -2,7 +2,7 @@
     <div class="top">
         <div class="user d-flex gap-2 justify-content-center">
             {% if current_user.is_authenticated %}
-                <a class="w-100 d-flex gap-3 align-items-center user-info" href="{{ url_for('post.profile') }}">
+                <a class="w-100 d-flex gap-3 align-items-center user-info" href="{{ url_for('user.profile') }}">
                     <div class="user-img">
                         <img src="../../static/imgs/user-profile-image.png" alt="">
                     </div>
@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="side_item">
-                <a href="#">
+                <a href="{{ url_for('consumo.simulador') }}">
                     <i class="bi bi-coin"></i>
                     <span class="item-description">Consumo</span>
                 </a>

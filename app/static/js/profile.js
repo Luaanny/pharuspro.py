@@ -8,7 +8,6 @@ function enableEditting() {
         input.removeAttribute("disabled");
 
     });
-
     editButton.classList.add('d-none');
     saveButton.classList.remove('d-none');
 
@@ -38,10 +37,10 @@ function deleteUser() {
         method: "DELETE",
         credentials: "include"
     })
-        .then(response => response.text()) // Primeiro, obtemos a resposta como texto
+        .then(response => response.text())
         .then(text => {
-            console.log("Resposta do servidor:", text); // Verifica o que o Flask está retornando
-            return JSON.parse(text); // Depois, tentamos converter para JSON
+            console.log("Resposta do servidor:", text);
+            return JSON.parse(text);
         })
         .then(data => {
             if (data.message) {
@@ -49,5 +48,4 @@ function deleteUser() {
             }
         })
         .catch(error => console.error("Erro:", error));
-
 }

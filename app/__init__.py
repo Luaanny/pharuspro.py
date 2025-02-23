@@ -10,11 +10,17 @@ def create_app(config_class="app.config.DevelopmentConfig"):
     db.init_app(app)
     migrate.init_app(app, db)
     lm.init_app(app)
+    lm.login_view = 'auth_bp.login'
 
-    from app.views.auth_routes import auth_bp
+    from app.Controllers.consumo_controller import consumo_bp
+    from app.Controllers.user_controller import user_bp
+    from app.Controllers.auth_controller import auth_bp
     from app.views.post_routes import post_bp
+
     app.register_blueprint(auth_bp)
     app.register_blueprint(post_bp)
+    app.register_blueprint(user_bp)
+    app.register_blueprint(consumo_bp)
 
     from app.error_handlers import register_error_handlers
     register_error_handlers(app)

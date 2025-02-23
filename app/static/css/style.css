@@ -42,3 +42,12 @@ body, html {
     text-decoration: none;
     color: black;
 }
+
+.toast-img {
+    width: 30px;
+    height: 30px;
+}
+
+.toast-danger {
+
+}

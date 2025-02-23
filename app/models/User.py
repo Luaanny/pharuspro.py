@@ -9,7 +9,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255), nullable=False)
     role = db.Column(db.String(10), nullable=True, default='comum')
 
-    consumos = db.relationship('Consumo', backref='consumos_user', cascade="all, delete-orphan")
+    consumos = db.relationship('Consumo', back_populates="user", cascade="all, delete-orphan")
 
 @lm.user_loader
 def load_user(user_id):
