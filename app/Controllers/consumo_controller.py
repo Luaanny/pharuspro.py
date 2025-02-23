@@ -5,7 +5,7 @@ from flask_login import current_user, login_required
 
 consumo_bp = Blueprint('consumo', __name__)
 
-@consumo_bp.route('/simulador', methods=['POST', 'GET'])
+@consumo_bp.route('/simulador', methods=['GET'])
 @login_required
 def simulador():
     consumos = Consumo.query.all()  
