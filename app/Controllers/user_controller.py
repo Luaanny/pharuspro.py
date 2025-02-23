@@ -32,7 +32,7 @@ def profile():
     return render_template("pages/profile.html", include_header=True)
 
 
-@user_bp.route('/delete/<int:user_id>', methods=["DELETE"])
+@user_bp.route('/user/delete/<int:user_id>', methods=["DELETE"])
 @login_required
 def delete(user_id):
     if current_user.id != user_id:

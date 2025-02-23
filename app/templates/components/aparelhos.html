@@ -17,7 +17,7 @@
                         <p class="card-text">Consumo mensal: {{ consumo.consumo_mensal }}</p>
                     </div>
                     <div class="buttons p-2">
-                        <button id="deviceDelete">
+                        <button id="deviceDeleteBtn" data-device-id="{{ consumo.id }}" onclick="deleteDevice()">
                             <i class="bi bi-trash"></i>
                         </button>
                         <button id="deviceEdit">

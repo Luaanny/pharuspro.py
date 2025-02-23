@@ -1,4 +1,4 @@
-from flask import Blueprint, request, redirect, url_for, render_template, flash
+from flask import Blueprint, request, redirect, url_for, render_template, flash, jsonify
 from app.extensions.database import db
 from app.models.Consumo import Consumo
 from flask_login import current_user, login_required
@@ -50,5 +50,16 @@ def device_register():
         else:
             flash('Aparelho já registrado', 'error')
 
-
     return redirect(url_for('consumo.simulador'))
+
+@consumo_bp.route('/consumo/delete/<int:consumo_id>', methods=['DELETE'])
+@login_required
+def delete(consumo_id):
+    if request.method == 'DELETE':
+        consumo = Consumo.query.get(consumo_id)
+
+        db.session.delete(consumo)
+        db.session.commit()
+
+        return jsonify({"message": f"user {consumo.aparelho} deletado com sucesso!"}), 200, flash(
+            f"user {consumo.aparelho} deletado com sucesso!", 'success')
