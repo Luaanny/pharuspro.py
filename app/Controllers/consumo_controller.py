@@ -27,28 +27,32 @@ def device_register():
         time_interval = float(request.form['time_interval'])
         consumo_mensal = (potency * time_interval * 30) / 1000
 
-        novo_consumo = Consumo(
-            aparelho=aparelho,
-            potency=float(potency),
-            time_interval=float(time_interval),
-            consumo_mensal=float(consumo_mensal),
-            user=current_user
-        )
+        if 0 < time_interval <= 24 and potency > 0:
+            novo_consumo = Consumo(
+                aparelho=aparelho,
+                potency=float(potency),
+                time_interval=float(time_interval),
+                consumo_mensal=float(consumo_mensal),
+                user=current_user
+            )
+            existing_consumo = Consumo.query.filter_by(
+                user_id=current_user.id,
+                aparelho=novo_consumo.aparelho,
+                potency=novo_consumo.potency,
+                time_interval=novo_consumo.time_interval
+            ).first()
 
-        existing_consumo = Consumo.query.filter_by(
-            user_id=current_user.id,
-            aparelho=novo_consumo.aparelho,
-            potency=novo_consumo.potency,
-            time_interval=novo_consumo.time_interval
-        ).first()
+            if not existing_consumo:
+                db.session.add(novo_consumo)
+                db.session.commit()
+                flash(f'Aparelho {novo_consumo.aparelho} registrado com sucesso', 'success')
+                flash(f'{random.choice(tips)}', 'tip')
+            else:
+                flash('Aparelho já registrado', 'error')
 
-        if not existing_consumo:
-            db.session.add(novo_consumo)
-            db.session.commit()
-            flash('Aparelho registrado com sucesso', 'success')
-            flash(f'{random.choice(tips)}', 'tip')
         else:
-            flash('Aparelho já registrado', 'error')
+            flash('Tempo de uso ou potência inválidos', 'error')
+
 
     return redirect(url_for('consumo.simulador'))
 
