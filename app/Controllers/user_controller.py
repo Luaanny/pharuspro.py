@@ -18,10 +18,10 @@ def update_profile():
     email = request.form.get('email')
 
     if not username or not email:
-        return jsonify({"error": "Todos os campos são obrigatórios."}), 400
+        return flash('Todos os campos são obrigatórios', 'error')
 
     if User.query.filter_by(email=email).first() and current_user.email != email:
-        return jsonify({"error": "Esse e-mail já está em uso."}), 400
+        return flash('Esse email já está em uso', 'error')
 
     current_user.username = username
     current_user.email = email

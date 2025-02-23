@@ -56,6 +56,25 @@ def device_register():
 
     return redirect(url_for('consumo.simulador'))
 
+@consumo_bp.route('/update_device/<int:consumo_id>', methods=['PUT'])
+def update_device(consumo_id):
+    data = request.get_json()
+
+    potency = data.get('potency')
+    time_interval = data.get('time_interval')
+    consumo_mensal = (float(potency) * float(time_interval) * 30) / 1000
+
+    consumo = Consumo.query.filter_by(user_id=current_user.id, id=consumo_id).first()
+    if consumo:
+        consumo.potency = float(potency)
+        consumo.time_interval = float(time_interval)
+        consumo.consumo_mensal = float(consumo_mensal)
+        db.session.commit()
+        return jsonify({"message": "Consumo atualizado com sucesso"}), 200, flash('Consumo atualizado com sucesso', 'success')
+    else:
+        return jsonify({"error": "Consumo não encontrado"}), 404, flash('Consumo não encontrado', 'error')
+
+
 @consumo_bp.route('/consumo/delete/<int:consumo_id>', methods=['DELETE'])
 @login_required
 def delete(consumo_id):
@@ -65,5 +84,5 @@ def delete(consumo_id):
         db.session.delete(consumo)
         db.session.commit()
 
-        return jsonify({"message": f"user {consumo.aparelho} deletado com sucesso!"}), 200, flash(
+        return jsonify({"message": f"Aparelho {consumo.aparelho} deletado com sucesso!"}), 200, flash(
             f"aparelho {consumo.aparelho} deletado com sucesso!", 'success')
