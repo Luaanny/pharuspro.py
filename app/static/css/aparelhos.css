@@ -21,3 +21,7 @@
     transform: translate(100%, -50%) !important;
     opacity: 0;
 }
+
+.card-text.disabled {
+    border: none;
+}

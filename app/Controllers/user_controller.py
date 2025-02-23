@@ -1,36 +1,34 @@
 from functools import wraps 
 from flask import abort, Blueprint, render_template, request, jsonify, flash, redirect, url_for
-from werkzeug.security import check_password_hash, generate_password_hash
 from app.extensions.database import db
 from app.models.User import User
-from flask_login import current_user, login_required, logout_user, login_user
+from flask_login import current_user, login_required, logout_user
 
 user_bp = Blueprint('user', __name__)
 
-@user_bp.route('/profile', methods=['GET', 'POST'])
+@user_bp.route('/profile', methods=['GET'])
 @login_required
 def profile():
-    if request.method == 'POST':
-        username = request.form.get('username')
-        email = request.form.get('email')
-
-        if not username or not email:
-            flash("Todos os campos são obrigatórios.", "error")
-        else:
-            if User.query.filter_by(username=username).first() and current_user.username != username:
-                flash("Esse nome de usuário já está em uso.", "error")
-            elif User.query.filter_by(email=email).first() and current_user.email != email:
-                flash("Esse e-mail já está em uso.", "error")
-            else:
-                current_user.username = username
-                current_user.email = email
-                db.session.commit()
-                flash("Perfil atualizado com sucesso!", "success")
-
-        return redirect(url_for('user.profile'))
-
     return render_template("pages/profile.html", include_header=True)
 
+@user_bp.route('/update_profile', methods=['POST'])
+@login_required
+def update_profile():
+    username = request.form.get('username')
+    email = request.form.get('email')
+
+    if not username or not email:
+        return jsonify({"error": "Todos os campos são obrigatórios."}), 400
+
+    if User.query.filter_by(email=email).first() and current_user.email != email:
+        return jsonify({"error": "Esse e-mail já está em uso."}), 400
+
+    current_user.username = username
+    current_user.email = email
+    db.session.commit()
+
+    flash("Usuário atualizado com sucesso", "success")
+    return redirect(url_for('user.profile'))
 
 @user_bp.route('/user/delete/<int:user_id>', methods=["DELETE"])
 @login_required

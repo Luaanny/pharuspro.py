@@ -10,20 +10,36 @@
         {% for consumo in consumos %}
             <li class="d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ consumo.aparelho }}</h5>
-                        <p class="card-text">Potência: {{ consumo.potency }}</p>
-                        <p class="card-text">Tempo de uso: {{ consumo.time_interval }}</p>
-                        <p class="card-text">Consumo mensal: {{ consumo.consumo_mensal }}</p>
-                    </div>
-                    <div class="buttons p-2">
-                        <button id="deviceDeleteBtn" data-device-id="{{ consumo.id }}" onclick="deleteDevice()">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                        <button id="deviceEdit">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                    </div>
+                    <form action="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ consumo.aparelho }}</h5>
+                            <div class="d-flex flex-column text-start mb-2">
+                                <label for="potency">Potência</label>
+                                <input class="card-text disabled" name="potency" value="{{ consumo.potency }}"
+                                       disabled></input>
+                            </div>
+                            <div class="d-flex flex-column text-start mb-2">
+                                <label for="time_interval">Tempo de uso</label>
+                                <input class="card-text disabled" name="time_interval"
+                                       value="{{ consumo.time_interval }}"
+                                       disabled></input>
+                            </div>
+                            <div class="d-flex flex-column text-start mb-2">
+                                <label for="consumo_mensal">Consumo mensal</label>
+                                <input class="card-text disabled" name="consumo_mensal"
+                                       value="{{ consumo.consumo_mensal }}"
+                                       disabled></input>
+                            </div>
+                        </div>
+                        <div class="buttons p-2">
+                            <button id="deviceDeleteBtn" data-device-id="{{ consumo.id }}" onclick="deleteDevice()">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button id="deviceEdit">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </li>
         {% else %}
