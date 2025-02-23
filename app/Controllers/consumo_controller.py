@@ -6,18 +6,20 @@ import random
 
 consumo_bp = Blueprint('consumo', __name__)
 tips = [
-        "Desligue luzes ao sair de um cômodo.",
-        "Use lâmpadas de LED.",
-        "Desligue aparelhos eletrônicos da tomada quando não estiverem em uso.",
-        "Aproveite a luz natural.",
-        "Mantenha portas e janelas fechadas quando o ar-condicionado estiver ligado.",
-    ]
+    "Desligue luzes ao sair de um cômodo.",
+    "Use lâmpadas de LED.",
+    "Desligue aparelhos eletrônicos da tomada quando não estiverem em uso.",
+    "Aproveite a luz natural.",
+    "Mantenha portas e janelas fechadas quando o ar-condicionado estiver ligado.",
+]
+
 
 @consumo_bp.route('/simulador', methods=['GET'])
 @login_required
 def simulador():
     consumos = Consumo.query.filter_by(user_id=current_user.id).all()
     return render_template('pages/simulador.html', consumos=consumos, include_header=True, include_sidebar=True)
+
 
 @consumo_bp.route('/device_register', methods=['POST'])
 def device_register():
@@ -53,26 +55,35 @@ def device_register():
         else:
             flash('Tempo de uso ou potência inválidos', 'error')
 
-
     return redirect(url_for('consumo.simulador'))
+
 
 @consumo_bp.route('/update_device/<int:consumo_id>', methods=['PUT'])
 def update_device(consumo_id):
-    data = request.get_json()
+    data = request.get_json()  # Obtém os dados enviados pelo frontend
 
     potency = data.get('potency')
     time_interval = data.get('time_interval')
+
+    # Validação dos dados
+    if not (0 < float(time_interval) <= 24) or not (float(potency) > 0):
+        return jsonify({"error": "Dados inválidos. O tempo de uso deve estar entre 0 e 24 horas, e a potência deve ser maior que 0."}), 400, flash('Potência ou tempo de uso inválidos', 'error')
+
+    # Cálculo do consumo mensal
     consumo_mensal = (float(potency) * float(time_interval) * 30) / 1000
 
+    # Busca o consumo no banco de dados
     consumo = Consumo.query.filter_by(user_id=current_user.id, id=consumo_id).first()
-    if consumo:
-        consumo.potency = float(potency)
-        consumo.time_interval = float(time_interval)
-        consumo.consumo_mensal = float(consumo_mensal)
-        db.session.commit()
-        return jsonify({"message": "Consumo atualizado com sucesso"}), 200, flash('Consumo atualizado com sucesso', 'success')
-    else:
+    if not consumo:
         return jsonify({"error": "Consumo não encontrado"}), 404, flash('Consumo não encontrado', 'error')
+
+    # Atualiza os dados do consumo
+    consumo.potency = float(potency)
+    consumo.time_interval = float(time_interval)
+    consumo.consumo_mensal = float(consumo_mensal)
+    db.session.commit()
+
+    return jsonify({"message": "Consumo atualizado com sucesso!"}), 200, flash('Consumo atualizado com sucesso', 'success')
 
 
 @consumo_bp.route('/consumo/delete/<int:consumo_id>', methods=['DELETE'])

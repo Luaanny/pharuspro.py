@@ -44,7 +44,9 @@ function save() {
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
-                    console.error('Erro:', data);
+                    console.log(data)
+                    form.reset()
+                    window.location.reload();
                 } else {
                     window.location.reload();
                 }
