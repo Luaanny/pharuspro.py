@@ -10,7 +10,6 @@
     animation: fadeInUp 0.7s ease-in-out;
 }
 
-/* Usuário e abas laterais */
 .user-img img {
     width: 70px;
     height: 70px;
@@ -31,6 +30,7 @@
 .user-info-tab button:hover, .site-config-tab button:hover {
     background-color: #E0A800;
 }
+
 label {
     font-size: 18px;
     font-weight: bold;
@@ -58,11 +58,13 @@ button {
     transition: transform 0.2s ease-in-out, background 0.3s;
 }
 
-#deleteButton {
+#deleteButton,
+#cancelButton {
     color: #d9534f;
 }
 
-#deleteButton:hover {
+#deleteButton:hover,
+#cancelButton :hover {
     color: #c9302c;
     transform: scale(1.1);
 }

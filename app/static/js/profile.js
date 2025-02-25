@@ -2,6 +2,7 @@ let editButton = document.querySelector('#editButton')
 let saveButton = document.querySelector('#saveButton')
 let inputs = document.querySelectorAll('input')
 let deleteButton = document.querySelector("#deleteButton")
+let cancelButton = document.querySelector('#cancelButton')
 
 function enableEditting() {
     inputs.forEach(input => {
@@ -9,8 +10,9 @@ function enableEditting() {
 
     });
     editButton.classList.add('d-none');
+    deleteButton.classList.add('d-none')
     saveButton.classList.remove('d-none');
-
+    cancelButton.classList.remove('d-none');
 }
 
 function save() {
@@ -23,7 +25,24 @@ function save() {
     });
 
     editButton.classList.remove('d-none');
+    deleteButton.classList.remove('d-none');
     saveButton.classList.add('d-none');
+    cancelButton.classList.add('d-none');
+}
+
+function cancel() {
+    let form = document.querySelector('form')
+
+    form.reset()
+
+    inputs.forEach(input => {
+        input.setAttribute('disabled', "disabled");
+    });
+
+    editButton.classList.remove('d-none');
+    deleteButton.classList.remove('d-none');
+    saveButton.classList.add('d-none');
+    cancelButton.classList.add('d-none');
 }
 
 function deleteUser() {
