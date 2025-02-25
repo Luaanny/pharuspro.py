@@ -4,7 +4,6 @@ const main = document.querySelector("main")
 
 sideBar.addEventListener("mouseover", () => {
     sideBar.classList.add('open')
-    main.style.marginLeft = '230px'
     sideBarText.forEach((text) => {
         text.classList.add('d-block')
     })
@@ -12,7 +11,6 @@ sideBar.addEventListener("mouseover", () => {
 
 sideBar.addEventListener("mouseout", () => {
     sideBar.classList.remove('open')
-    main.style.marginLeft = '80px'
     sideBarText.forEach((text) => {
         text.classList.remove('d-block')
     })

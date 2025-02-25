@@ -4,26 +4,24 @@ body {
 }
 
 main {
-    background-color: #1E1E2E;
+    background-color: #3A3A3A;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.85); /* Branco suavizado */
+    background:#1E1E2E;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); /* Sombra mais leve */
-    backdrop-filter: blur(10px); /* Efeito vidro */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
-    color: #333333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
 }
 
-/* Alternativa: um fundo acinzentado */
 .container-alt {
-    background: #f5f5f5; /* Cinza claro */
+    background: #f5f5f5;
 }
-/* Melhor organização da barra lateral */
 .toggle-devices {
     width: 8px;
     height: 150px;
@@ -41,7 +39,6 @@ main {
     cursor: pointer;
 }
 
-/* Posicionamento e melhorias no consumo mensal */
 .consumo-mensal-container {
     position: relative;
     text-align: center;
@@ -63,7 +60,6 @@ main {
     font-weight: bold;
 }
 
-/* Melhoria nos inputs */
 input {
     border-radius: 5px !important;
 }
@@ -73,12 +69,11 @@ input:focus {
     box-shadow: 0 0 5px rgba(255, 193, 7, 0.7);
 }
 
-/* Botão com animação mais sutil */
 .btn.btn-primary {
     background-color: #ffc107 !important;
     border: none;
     transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
-    color: #333333;
+    color: white;
 }
 
 .btn.btn-primary:hover {
