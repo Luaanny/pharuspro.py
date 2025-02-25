@@ -1,7 +1,6 @@
-/* Background e container refinados */
 .background {
-    background-color: #1E1E2E; /* Tom escuro, moderno */
-    color: #E0E0E0; /* Texto claro */
+    background-color: #1E1E2E;
+    color: #E0E0E0;
     border-radius: 12px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }

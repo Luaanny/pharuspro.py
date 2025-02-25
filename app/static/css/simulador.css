@@ -1,6 +1,10 @@
 body {
     overflow-x: hidden;
-    background-color: #f8f9fa;
+    background-color: #1E1E2E !important;
+}
+
+main {
+    background-color: #1E1E2E;
 }
 
 .container {
