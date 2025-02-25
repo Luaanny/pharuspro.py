@@ -4,33 +4,44 @@
 {% block css %}simulador{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <form action="{{ url_for('consumo.device_register') }}" method="post" id="deviceAddForms">
-            <div>
-                <label for="aparelho">Nome do Aparelho:</label>
-                <input type="text" name="aparelho" id="aparelho" placeholder="Nome do eletrodoméstico" required><br>
+    <div class="container mt-5 animate__animated animate__fadeIn">
+        <h1 class="text-center mb-4 animate__animated animate__slideInDown fw-bold">Cadastro de Aparelhos</h1>
+
+        <form action="{{ url_for('consumo.device_register') }}" method="post" id="deviceAddForms"
+              class="animate__animated animate__fadeInUp">
+            <div class="mb-3">
+                <label for="aparelho" class="form-label">Nome do Aparelho:</label>
+                <input type="text" name="aparelho" id="aparelho" class="form-control"
+                       placeholder="Nome do eletrodoméstico" required>
             </div>
-            <div>
-                <label for="potency">Potência (W):</label>
-                <input type="number" name="potency" id="potency" placeholder="Potência (em Watts)" required><br>
+            <div class="mb-3">
+                <label for="potency" class="form-label">Potência (W):</label>
+                <input type="number" name="potency" id="potency" class="form-control" placeholder="Potência (em Watts)"
+                       required>
             </div>
-            <div>
-                <label for="time_interval">Tempo de uso diário (h):</label>
-                <input type="number" name="time_interval" id="time_interval"
-                       placeholder="Tempo de uso diário (em horas)" required><br>
+            <div class="mb-3">
+                <label for="time_interval" class="form-label">Tempo de uso diário (h):</label>
+                <input type="number" name="time_interval" id="time_interval" class="form-control"
+                       placeholder="Tempo de uso diário (em horas)" required>
             </div>
-            <div>
-                <button type="submit">Adicionar Aparelho</button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg animate__animated">
+                    Adicionar Aparelho
+                </button>
             </div>
         </form>
 
-        <div class="position-absolute d-flex flex-column align-items-center consumo-mensal-container">
-            <span>Seu consumo total</span>
-            <span class="consumo-total">R$ {{ consumo_mensal }}</span>
+        <div class="position-absolute d-flex flex-column align-items-center consumo-mensal-container mt-4 animate__animated animate__fadeIn">
+            <span class="fs-4 fw-bold">Seu consumo total</span>
+            <span class="consumo-total fs-3 fw-bold">R$ {{ consumo_mensal }}</span>
         </div>
+
         {% include "components/aparelhos.html" %}
-        <div class="toggle-devices" id="devicesToggle"></div>
+
+        <div class="toggle-devices animate__animated animate__fadeIn" id="devicesToggle"></div>
     </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <script src="../../static/js/simulador.js"></script>
     <script src="../../static/js/devices.js"></script>

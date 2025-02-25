@@ -1,23 +1,98 @@
+/* Background e container refinados */
 .background {
-    background-color: #343A40;
-    color: white;
-}
-
-.col-c {
-    width: 13%;
-}
-
-main {
-    margin: 0;
+    background-color: #1E1E2E; /* Tom escuro, moderno */
+    color: #E0E0E0; /* Texto claro */
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .container {
-    max-width: 95% !important;
+    max-width: 90% !important;
+    animation: fadeInUp 0.7s ease-in-out;
 }
 
-.user-img img{
-    width: 60px;
-    height: 60px;
+/* Usuário e abas laterais */
+.user-img img {
+    width: 70px;
+    height: 70px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 50%;
+    border: 3px solid #FFC107;
+}
+
+.user-info-tab button, .site-config-tab button {
+    background-color: #FFC107;
+    color: #1E1E2E;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+.user-info-tab button:hover, .site-config-tab button:hover {
+    background-color: #E0A800;
+}
+label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+input {
+    background-color: #2A2A3A;
+    color: white;
+    border: 1px solid #FFC107;
+    padding: 8px;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input:disabled {
+    opacity: 0.6;
+}
+
+button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+#deleteButton {
+    color: #d9534f;
+}
+
+#deleteButton:hover {
+    color: #c9302c;
+    transform: scale(1.1);
+}
+
+#editButton {
+    color: #5bc0de;
+}
+
+#editButton:hover {
+    color: #31b0d5;
+    transform: scale(1.1);
+}
+
+#saveButton {
+    color: #5cb85c;
+}
+
+#saveButton:hover {
+    color: #4cae4c;
+    transform: scale(1.1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

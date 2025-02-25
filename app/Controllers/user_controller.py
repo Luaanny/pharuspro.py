@@ -2,6 +2,7 @@ from functools import wraps
 from flask import abort, Blueprint, render_template, request, jsonify, flash, redirect, url_for
 from app.extensions.database import db
 from app.models.User import User
+from app.models.Consumo import Consumo
 from flask_login import current_user, login_required, logout_user
 
 user_bp = Blueprint('user', __name__)
@@ -9,7 +10,12 @@ user_bp = Blueprint('user', __name__)
 @user_bp.route('/profile', methods=['GET'])
 @login_required
 def profile():
-    return render_template("pages/profile.html", include_header=True)
+    consumos = Consumo.query.filter_by(user_id=current_user.id).all()
+
+    consumo_mensal = sum(consumo.consumo_mensal for consumo in consumos)
+    consumo_mensal = round(consumo_mensal, 2)
+
+    return render_template("pages/profile.html", include_header=True, consumo_mensal=consumo_mensal)
 
 @user_bp.route('/update_profile', methods=['POST'])
 @login_required

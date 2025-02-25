@@ -16,6 +16,7 @@ main {
 body, html {
     height: 100%;
     background-color: #464B51 !important;
+    color: white !important;
 }
 
 .modal .btn {
@@ -46,8 +47,4 @@ body, html {
 .toast-img {
     width: 30px;
     height: 30px;
-}
-
-.toast-danger {
-
 }

@@ -5,7 +5,7 @@
             <i class="bi bi-x-circle"></i>
         </button>
     </div>
-    <h4>Lista de Aparelhos</h4>
+    <h4 class="fw-bold">Lista de Aparelhos</h4>
     <ul class="list-unstyled d-flex gap-2 flex-column">
         {% for consumo in consumos %}
             <li class="d-flex justify-content-center">
@@ -30,12 +30,12 @@
                                 <span id="consumo_mensal">R$ {{ consumo.consumo_mensal }}</span>
                             </div>
                         </div>
-                        <div class="buttons p-2">
+                        <div class="buttons d-flex gap-4 justify-content-center p-2">
                             <button type="button" class="deviceDeleteBtn" data-device-id="{{ consumo.id }}"
                                     onclick="deleteDevice({{ consumo.id }})">
                                 <i class="bi bi-trash"></i>
                             </button>
-                            <button type="button" id="deviceEdit{{ consumo.id }}"
+                            <button type="button" class="deviceEditBtn" id="deviceEdit{{ consumo.id }}"
                                     onclick="enableEditing({{ consumo.id }})">
                                 <i class="bi bi-pencil"></i>
                             </button>

@@ -8,7 +8,11 @@
     max-height: calc(100% - 250px);
     height: 100vh;
     width: 300px;
-    background: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
     transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease-in-out;
 }
 
@@ -22,6 +26,38 @@
     opacity: 0;
 }
 
+.card {
+    background-color: rgba(255, 255, 255, 0.9) !important; /* Fundo branco com 90% de opacidade */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important; /* Sombra suave */
+    border-radius: 12px !important; /* Bordas arredondadas */
+}
+
 .card-text.disabled {
     border: none;
+}
+
+#cardListClose:hover {
+    color: red;
+}
+
+input {
+    background: none;
+}
+
+button {
+    background: none !important;
+    border: none;
+}
+
+button i {
+    font-size: 20px;
+    transition: color .3s ease-in-out;
+}
+
+.deviceDeleteBtn i:hover {
+    color: red;
+}
+
+.deviceEditBtn i:hover {
+    color: #3b94AF;
 }

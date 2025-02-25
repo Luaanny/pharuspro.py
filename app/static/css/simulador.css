@@ -1,21 +1,88 @@
 body {
     overflow-x: hidden;
+    background-color: #f8f9fa;
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.85); /* Branco suavizado */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); /* Sombra mais leve */
+    backdrop-filter: blur(10px); /* Efeito vidro */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
+    color: #333333;
+}
+
+/* Alternativa: um fundo acinzentado */
+.container-alt {
+    background: #f5f5f5; /* Cinza claro */
+}
+/* Melhor organização da barra lateral */
 .toggle-devices {
-    width: .5rem;
-    height: 18rem;
-    background-color: red;
-    position: absolute;
+    width: 8px;
+    height: 150px;
+    background-color: #ffc107;
+    position: fixed;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 4px 0 0 4px;
+    transition: background 0.3s ease-in-out;
 }
 
+.toggle-devices:hover {
+    background-color: darkred;
+    cursor: pointer;
+}
+
+/* Posicionamento e melhorias no consumo mensal */
 .consumo-mensal-container {
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 5%;
-    font-size: 32px;
+    position: relative;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 24px;
     color: white;
+    background: #343a40;
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.consumo-total {
+    background-color: #ffc107;
+    color: black;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+/* Melhoria nos inputs */
+input {
+    border-radius: 5px !important;
+}
+
+input:focus {
+    outline-color: #ffc107 !important;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.7);
+}
+
+/* Botão com animação mais sutil */
+.btn.btn-primary {
+    background-color: #ffc107 !important;
+    border: none;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+    color: #333333;
+}
+
+.btn.btn-primary:hover {
+    background-color: #e0a800 !important;
+    transform: scale(1.05);
+}
+
+/* Animação de fade-in para o container */
+.animate__animated {
+    animation-duration: 0.8s;
 }
