@@ -33,7 +33,8 @@ function deleteUser() {
         return;
     }
 
-    fetch(`/delete/${userId}`, {
+    console.log('deletando...')
+    fetch(`user/delete/${userId}`, {
         method: "DELETE",
         credentials: "include"
     })

@@ -27,20 +27,22 @@
                 </div>
             </form>
 
-            <!-- Destacar o consumo mensal -->
             <div class="d-flex flex-column mt-5"><span type="email" name="gasto" class="fs-3 fw-bold text-warning text-center">Seu gasto mensal</span>
                 <span type="email" name="gasto"
                       class="fs-3 fw-bold text-warning text-center">R${{ consumo_mensal }}</span></div>
 
             <div class="d-flex gap-3 justify-content-center mt-5">
-                <button id="editButton" class="btn btn-info d-flex align-items-center" onclick="enableEditting()">
-                    <i class="bi bi-pencil"></i> Editar
+                <button id="editButton" class="btn btn-info d-flex gap-2 align-items-center" onclick="enableEditting()">
+                    <i class="bi bi-pencil"></i>
+                    <span>Editar</span>
                 </button>
-                <button id="deleteButton" class="btn btn-danger d-flex align-items-center" data-user-id="{{ current_user.id }}" onclick="deleteUser()">
-                    <i class="bi bi-trash3"></i> Excluir
+                <button id="deleteButton" class="btn btn-danger d-flex gap-2 align-items-center" data-user-id="{{ current_user.id }}" onclick="deleteUser()">
+                    <i class="bi bi-trash3"></i>
+                    <span>Excluir</span>
                 </button>
-                <button class="d-none btn btn-success d-flex align-items-center" id="saveButton" onclick="save()">
-                    <i class="bi bi-check2"></i> Salvar
+                <button class="d-none btn btn-success d-flex gap-2 align-items-center" id="saveButton" onclick="save()">
+                    <i class="bi bi-check2"></i>
+                    <span>Salvar</span>
                 </button>
             </div>
         </div>
